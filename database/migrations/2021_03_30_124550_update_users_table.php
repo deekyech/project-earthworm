@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
+
 
 class UpdateUsersTable extends Migration
 {
@@ -28,6 +30,7 @@ class UpdateUsersTable extends Migration
             // $table->text('additional_description')->nullable()->change();
 
             DB::statement("alter table `users` modify `phone_no` varchar(191) null, modify `email_verified_at` timestamp null, modify `phone_no_verified_at` timestamp null, modify `dob` date null, modify `gender` int unsigned null, modify `role` int unsigned null, modify `created_by` int unsigned null, modify `updated_by` int unsigned null, modify `deleted_at` timestamp null, modify `additional_description` text null");
+            $table->string('username')->unique();
         });
     }
 
@@ -39,5 +42,8 @@ class UpdateUsersTable extends Migration
     public function down()
     {
         //
+        Schema::table('users', function($table) {
+            $table->dropColumn('username');
+        });
     }
 }

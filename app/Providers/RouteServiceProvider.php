@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -16,6 +18,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected $namespace = 'App\Http\Controllers';
 
+    public const HOME = '/profile';
+
     /**
      * Define your route model bindings, pattern filters, etc.
      *
@@ -24,6 +28,9 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        Route::bind('username', function($username) {
+            return User::where('username', $username)->firstOrFail();
+        });
 
         parent::boot();
     }

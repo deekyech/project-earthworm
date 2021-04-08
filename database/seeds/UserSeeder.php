@@ -17,6 +17,7 @@ class UserSeeder extends Seeder
         //
         DB::table('users')->insert([
             'name'      =>      'Dhiresh Hirani',
+            'username'  =>      'dhiresh_hirani',
             'email'     =>      'dhireshk.hirani@gmail.com',
             'phone_no'  =>      '9867371111',
             'email_verified_at'     =>      Carbon::now(),
@@ -30,6 +31,7 @@ class UserSeeder extends Seeder
         ]);
         DB::table('users')->insert([
             'name'      =>      'Pranay Patro',
+            'username'  =>      'pranay_patro',
             'email'     =>      'pranaypatro@gmail.com',
             'phone_no'  =>      '7666375563',
             'email_verified_at'     =>      Carbon::now(),
@@ -43,6 +45,7 @@ class UserSeeder extends Seeder
         ]);
         DB::table('users')->insert([
             'name'      =>      'Arjun Parmani',
+            'username'  =>      'arjun_parmani',
             'email'     =>      'arjunparmani@gmail.com',
             'phone_no'  =>      '9930970203',
             'email_verified_at'     =>      Carbon::now(),
@@ -56,6 +59,7 @@ class UserSeeder extends Seeder
         ]);
         DB::table('users')->insert([
             'name'      =>      'Kishore Hirani',
+            'username'  =>      'kishore_hirani',
             'email'     =>      'kishore.hirani@gmail.com',
             'phone_no'  =>      '8980802525',
             'email_verified_at'     =>      Carbon::now(),
@@ -69,6 +73,7 @@ class UserSeeder extends Seeder
         ]);
         DB::table('users')->insert([
             'name'      =>      'Dharmik Doshi',
+            'username'  =>      'dharmik_doshi',
             'email'     =>      'ddsi@gmail.com',
             'phone_no'  =>      '9769722566',
             'email_verified_at'     =>      Carbon::now(),
@@ -76,12 +81,13 @@ class UserSeeder extends Seeder
             'password'  =>      Hash::make('ddsi12345'),
             'dob'       =>      Carbon::create('1999', '06', '01')->toDateTimeString(),
             'gender'    =>      '1',
-            'role'      =>      '2',
+            'role'      =>      '3',
             'created_by'=>      '1',
             'updated_by'=>      '1'
         ]);
         DB::table('users')->insert([
             'name'      =>      'Parth Nagarkar',
+            'username'  =>      'parth_nagarkar',
             'email'     =>      'parthnagarkar@gmail.com',
             'phone_no'  =>      '9930426913',
             'email_verified_at'     =>      Carbon::now(),
@@ -89,10 +95,16 @@ class UserSeeder extends Seeder
             'password'  =>      Hash::make('parth12345'),
             'dob'       =>      Carbon::create('1999', '06', '01')->toDateTimeString(),
             'gender'    =>      '1',
-            'role'      =>      '2',
+            'role'      =>      '3',
             'created_by'=>      '1',
             'updated_by'=>      '1'
         ]);
     }
 }
 
+/*
+User Roles:
+1: Super admin
+2: Farmer
+3: Investor
+*/

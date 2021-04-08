@@ -22,8 +22,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    Route::get('/profile', function() {
+    /* Route::get('/profile', function() {
         return view('profile');
-    })->name('profile');
+    })->name('profile'); */
+
+    Route::resource('profile', ProfileController::class)->except(['index', 'show', 'create', 'store']);
+    Route::get('profile/{username}', 'ProfileController@show');
 });
+
+
 

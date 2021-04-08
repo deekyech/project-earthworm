@@ -36,4 +36,27 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getAvatarAttribute()
+    {
+        $size = 40;
+        $name = $this->name;
+        return "https://ui-avatars.com/api/?name={$name}&rounded=true&size={$size}";
+    }
+
+    public function getRoleNameAttribute()
+    {
+        if($this->role == 1)
+        {
+            return "System Admin";
+        }
+        else if($this->role == 2)
+        {
+            return "Farmer";
+        }
+        else if($this->role == 3)
+        {
+            return "Investor";
+        }
+    }
 }

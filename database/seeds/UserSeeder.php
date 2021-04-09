@@ -15,6 +15,7 @@ class UserSeeder extends Seeder
     public function run()
     {
         //
+        $faker = Faker\Factory::create();
         DB::table('users')->insert([
             'name'      =>      'Dhiresh Hirani',
             'username'  =>      'dhiresh_hirani',
@@ -40,6 +41,9 @@ class UserSeeder extends Seeder
             'dob'       =>      Carbon::create('1999', '06', '01')->toDateTimeString(),
             'gender'    =>      '1',
             'role'      =>      '2',
+            'bio'       =>      $faker->paragraph(),
+            'average_rating'        =>      $faker->randomFloat(2, 1, 5),
+            'no_of_ratings'         =>      $faker->numberBetween(20, 200),
             'created_by'=>      '1',
             'updated_by'=>      '1'
         ]);
@@ -54,6 +58,9 @@ class UserSeeder extends Seeder
             'dob'       =>      Carbon::create('1999', '06', '01')->toDateTimeString(),
             'gender'    =>      '1',
             'role'      =>      '2',
+            'bio'       =>      $faker->paragraph(),
+            'average_rating'        =>      $faker->randomFloat(2, 1, 5),
+            'no_of_ratings'         =>      $faker->numberBetween(20, 200),
             'created_by'=>      '1',
             'updated_by'=>      '1'
         ]);
@@ -68,6 +75,9 @@ class UserSeeder extends Seeder
             'dob'       =>      Carbon::create('1999', '06', '01')->toDateTimeString(),
             'gender'    =>      '1',
             'role'      =>      '2',
+            'bio'       =>      $faker->paragraph(),
+            'average_rating'        =>      $faker->randomFloat(2, 1, 5),
+            'no_of_ratings'         =>      $faker->numberBetween(20, 200),
             'created_by'=>      '1',
             'updated_by'=>      '1'
         ]);
@@ -82,6 +92,9 @@ class UserSeeder extends Seeder
             'dob'       =>      Carbon::create('1999', '06', '01')->toDateTimeString(),
             'gender'    =>      '1',
             'role'      =>      '3',
+            'bio'       =>      $faker->paragraph(),
+            'average_rating'        =>      $faker->randomFloat(2, 1, 5),
+            'no_of_ratings'         =>      $faker->numberBetween(20, 200),
             'created_by'=>      '1',
             'updated_by'=>      '1'
         ]);
@@ -96,6 +109,9 @@ class UserSeeder extends Seeder
             'dob'       =>      Carbon::create('1999', '06', '01')->toDateTimeString(),
             'gender'    =>      '1',
             'role'      =>      '3',
+            'bio'       =>      $faker->paragraph(),
+            'average_rating'        =>      $faker->randomFloat(2, 1, 5),
+            'no_of_ratings'         =>      $faker->numberBetween(20, 200),
             'created_by'=>      '1',
             'updated_by'=>      '1'
         ]);

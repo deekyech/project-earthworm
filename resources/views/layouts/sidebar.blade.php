@@ -20,7 +20,7 @@
 							<div class="collapse in" id="collapseExample">
 								<ul class="nav">
 									<li>
-										<a href="#">
+										<a href="{{ route('profile.show', Auth::user()->username) }}">
 											<span class="link-collapse">My Profile</span>
 										</a>
 									</li>

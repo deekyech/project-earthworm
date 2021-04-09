@@ -31,6 +31,9 @@ class UpdateUsersTable extends Migration
 
             DB::statement("alter table `users` modify `phone_no` varchar(191) null, modify `email_verified_at` timestamp null, modify `phone_no_verified_at` timestamp null, modify `dob` date null, modify `gender` int unsigned null, modify `role` int unsigned null, modify `created_by` int unsigned null, modify `updated_by` int unsigned null, modify `deleted_at` timestamp null, modify `additional_description` text null");
             $table->string('username')->unique();
+            $table->text('bio')->nullable();
+            $table->decimal('average_rating')->nullable();
+            $table->integer('no_of_ratings')->nullable();
         });
     }
 
@@ -44,6 +47,9 @@ class UpdateUsersTable extends Migration
         //
         Schema::table('users', function($table) {
             $table->dropColumn('username');
+            $table->dropColumn('bio');
+            $table->dropColumn('average_rating');
+            $table->dropColumn('no_of_ratings');
         });
     }
 }

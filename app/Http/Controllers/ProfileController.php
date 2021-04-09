@@ -18,7 +18,7 @@ class ProfileController extends Controller
     {
         //
         // dd($user);
-        return view('show', compact('user'));
+        return view('profile.show', compact('user'));
     }
 
     /**

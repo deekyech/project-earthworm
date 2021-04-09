@@ -11,6 +11,10 @@
 |
 */
 
+use App\User;
+
+
+
 Route::get('/', function () {
     return redirect('/login');
 });
@@ -19,6 +23,9 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@index')->name('home');
+
+    $user = User::find(1);
+
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
@@ -27,7 +34,8 @@ Route::group(['middleware' => 'auth'], function () {
     })->name('profile'); */
 
     Route::resource('profile', ProfileController::class)->except(['index', 'show', 'create', 'store']);
-    Route::get('profile/{username}', 'ProfileController@show');
+    Route::get('profile/{username}', 'ProfileController@show')->name('profile.show');
+
 });
 
 

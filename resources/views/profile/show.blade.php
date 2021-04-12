@@ -127,7 +127,7 @@
 
 					@if ($user->id == Auth::user()->id)
 						<div class="text-left">
-							<a href="#" class="btn btn-primary">Manage Addresses</a>
+							<a href="{{ route('addresses.index') }}" class="btn btn-primary">Manage Addresses</a>
 						</div>
 					@endif
 					<div class="text-right mt-3 mb-3">
@@ -303,7 +303,7 @@
 
 					@if ($user->id == Auth::user()->id)
 						<div class="text-left">
-							<a href="#" class="btn btn-primary">Manage Addresses</a>
+							<a href="{{ route('addresses.index') }}" class="btn btn-primary">Manage Addresses</a>
 						</div>
 					@endif
 					<div class="text-right mt-3 mb-3">

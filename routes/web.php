@@ -36,6 +36,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('profile', ProfileController::class)->except(['index', 'show', 'create', 'store']);
     Route::get('profile/{username}', 'ProfileController@show')->name('profile.show');
 
+    Route::resource('addresses', AddressesController::class)->except(['show']);
+
 });
 
 

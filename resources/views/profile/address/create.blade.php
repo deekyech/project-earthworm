@@ -106,7 +106,7 @@
 							<div class="col-12">
 								<div class="">
 									<input class="" type="checkbox" name="is_primary" id="is_primary" value="1" style="-webkit-appearance: checkbox">
-									<input class="" type="hidden" name="is_primary" value="0">
+									{{-- <input class="" type="hidden" name="is_primary" value="0"> --}}
 									<label class="" for="is_primary">Make Primary Address</label>
 								</div>
 							</div>

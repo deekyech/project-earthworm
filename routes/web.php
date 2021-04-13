@@ -37,6 +37,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('profile/{username}', 'ProfileController@show')->name('profile.show');
 
     Route::resource('addresses', AddressesController::class)->except(['show']);
+    Route::get('addresses/make_primary_address/{address_id}', 'AddressesController@makePrimaryAddress');
 
 });
 

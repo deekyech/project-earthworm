@@ -87,12 +87,18 @@
 							<th scope="col">Pincode</th>
 							<th scope="col">Edit</th>
 							<th scope="col">Delete</th>
+                            <th scope="col">Make Primary</th>
 						</tr>
 					</thead>
 					<tbody>
 						@foreach ( $residential_addresses as $residential_address)
 							<tr>
-								<td>{{ $loop->iteration }}</td>
+								<td>
+                                    {{ $loop->iteration }}
+                                    @if ($residential_address->is_primary)
+                                        <i class="fas fa-flag"></i>
+                                    @endif
+                                </td>
 								<td>{{ $residential_address->address->full_name }}</td>
 								<td>{{ $residential_address->address->line_1 }}</td>
 								<td>{{ $residential_address->address->line_2 }}</td>
@@ -106,6 +112,17 @@
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" onclick="return confirm('Are you sure you want to delete this?')" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="addresses/make_primary_address/{{$residential_address->id}}">
+                                        @csrf
+                                        <button type="submit" class="btn btn-primary"
+                                        @if ($residential_address->is_primary)
+                                            disabled
+                                        @endif>
+                                            <i class="fas fa-flag"></i>
+                                        </button>
                                     </form>
                                 </td>
 							</tr>

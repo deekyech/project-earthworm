@@ -68,7 +68,7 @@
 							<div class="col-12">
 								<div class="form-group form-group-default">
 									<label for="land_area">Land Area:</label>
-									<input type="number" class="form-control" name="land_area" id="land_area" placeholder="Enter Land Area:" value="{{ $address->land_area }}">
+									<input type="number" class="form-control" name="land_area" id="land_area" placeholder="Enter Land Area:" value="{{ $address->land_area }}" required>
 								</div>
 							</div>
 						</div>

@@ -156,8 +156,8 @@
 									<div class="user-box">
 										<div class="avatar-lg"><img src="assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
 										<div class="u-text">
-											<h4>Hizrian</h4>
-											<p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
+											<h4>{{ Auth::user()->name }}</h4>
+											<p class="text-muted">{{ Auth::user()->email }}</p><a href="{{ route('profile.show', Auth::user()->username) }}" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
 										</div>
 									</div>
 								</li>

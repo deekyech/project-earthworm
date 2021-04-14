@@ -27,9 +27,10 @@ class ProfileController extends Controller
      * @param  \App\User  $User
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($user)
     {
         //
+        return view('profile.editbio', ["user" => User::find($user)]);
     }
 
     /**
@@ -42,6 +43,11 @@ class ProfileController extends Controller
     public function update(Request $request, User $user)
     {
         //
+        // dd($request->all());
+        // dd(array_slice($request->all(), 3));
+        $user1 = User::find($request->user_id);
+        $user1->update(array_slice($request->all(), 3));
+        return redirect(route("profile.show", $user1->username));
     }
 
     /**

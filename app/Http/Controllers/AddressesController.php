@@ -27,12 +27,12 @@ class AddressesController extends Controller
 		if(Farmer::where('user_id', $user->id)->exists())
 		{
 			//User is farmer
-			return view('profile.address.index', [ 'farming_addresses' => FarmingAddress::where('farmer_id', $user->farmer()->id)->with('address')->get(), 'residential_addresses' => ResidentialAddress::where('user_id', $user->id)->get() ]);
+			return view('profile.address.index', [ 'farming_addresses' => FarmingAddress::where('farmer_id', $user->farmer()->id)->where('deleted_at', null)->with('address')->get(), 'residential_addresses' => ResidentialAddress::where('user_id', $user->id)->where('deleted_at', null)->get() ]);
 		}
 		else
 		{
 			//User is investor
-			return view('profile.address.index', ['residential_addresses' => ResidentialAddress::where('user_id', $user->id)->with('address')->get() ]);
+			return view('profile.address.index', ['residential_addresses' => ResidentialAddress::where('user_id', $user->id)->where('deleted_at', null)->with('address')->get() ]);
 		}
 	}
 
@@ -82,13 +82,17 @@ class AddressesController extends Controller
 			$residential_address = new ResidentialAddress();
 			$residential_address->user_id = Auth::user()->id;
 			$residential_address->address_id = $address->id;
-			$residential_address->is_primary = $request->is_primary == null? 0: 1;
+			$residential_address->is_primary = $request->is_primary ?? 0;
 			$residential_address->created_by = $address->created_by;
             if($residential_address->is_primary == 1)
             {
-                $primary_residential_address = ResidentialAddress::where('user_id', Auth::user()->id)->where('is_primary', 1)->first();
+                $primary_residential_address = ResidentialAddress::where('user_id', Auth::user()->id)->where('is_primary', 1)->where('deleted_at', null)->first();
                 $primary_residential_address->is_primary = 0;
                 $primary_residential_address->update();
+            }
+            if($residential_address->is_primary == 0 && ResidentialAddress::where('user_id', Auth::user()->id)->where('is_primary', 1)->where('deleted_at', null)->count() == 0)
+            {
+                $residential_address->is_primary = 1;
             }
 			$residential_address->save();
 		}
@@ -156,12 +160,7 @@ class AddressesController extends Controller
     public function makePrimaryAddress($residential_address_id)
     {
         // dd($residential_address_id);
-        $residential_address = ResidentialAddress::find($residential_address_id);
-        $primary_residential_address = ResidentialAddress::where('user_id', Auth::user()->id)->where('is_primary', 1)->first();
-        $residential_address->is_primary = 1;
-        $primary_residential_address->is_primary = 0;
-        $primary_residential_address->update();
-        $residential_address->save();
+        ResidentialAddress::where('id', $residential_address_id)->where('deleted_at', null)->first()->makePrimaryAddress();
         return redirect(route('addresses.index'));
     }
 }

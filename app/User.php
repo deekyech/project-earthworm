@@ -16,7 +16,7 @@ class User extends Authenticatable
 	 * @var array
 	 */
 	protected $fillable = [
-		'name', 'email', 'password',
+		'name', 'email', 'password', 'dob', 'gender', 'phone_no', 'bio', 'role', 'username'
 	];
 
 	/**
@@ -82,6 +82,7 @@ class User extends Authenticatable
 
 	public function getPrimaryAddressAttribute()
 	{
-		return ResidentialAddress::where('user_id', $this->id)->where('is_primary', '1')->firstOrFail()->address()->firstOrFail();
+		$residential_address = ResidentialAddress::where('user_id', $this->id)->where('is_primary', '1')->first();
+        return isset($residential_address) ? $residential_address->address()->first() : null;
 	}
 }

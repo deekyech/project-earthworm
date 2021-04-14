@@ -72,7 +72,7 @@
 					<div class="row mt-3">
 						<div class="col-6">
 							<div class="form-group form-group-default">
-								<label for="landmark">Landmark (Optional):</label>
+								<label for="landmark">Landmark:</label>
 								<input type="text" class="form-control" name="landmark" id="landmark" placeholder="Enter Landmark:">
 							</div>
 						</div>
@@ -88,7 +88,7 @@
 							<div class="col-12">
 								<div class="form-group form-group-default">
 									<label for="land_area">Land Area:</label>
-									<input type="number" class="form-control" name="land_area" id="land_area" placeholder="Enter Land Area:">
+									<input type="number" class="form-control" name="land_area" id="land_area" value="0" placeholder="Enter Land Area:" required>
 								</div>
 							</div>
 						</div>
@@ -96,7 +96,7 @@
 							<div class="col-12">
 								<div class="">
 									<input class="" type="checkbox" name="is_primary" id="is_primary" value="1" style="-webkit-appearance: checkbox">
-									<input class="" type="hidden" name="is_primary" value="0">
+									{{-- <input class="" type="hidden" name="is_primary" value="0"> --}}
 									<label class="" for="is_primary">Make Primary Address</label>
 								</div>
 							</div>

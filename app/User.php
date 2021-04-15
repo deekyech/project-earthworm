@@ -85,4 +85,28 @@ class User extends Authenticatable
 		$residential_address = ResidentialAddress::where('user_id', $this->id)->where('is_primary', '1')->first();
         return isset($residential_address) ? $residential_address->address()->first() : null;
 	}
+
+    public function is_farmer()
+    {
+        return $this->role == 2 ? 1 : 0;
+    }
+
+    public function is_investor()
+    {
+        return $this->role == 3 ? 1 : 0;
+    }
+
+    public function is_admin()
+    {
+        return $this->role == 1 ? 1 : 0;
+    }
+
+    public function get_farmer_id()
+    {
+        if($this->is_farmer())
+        {
+            return Farmer::where('user_id', $this->id)->first()->id;
+        }
+        return null;
+    }
 }

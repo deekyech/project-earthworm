@@ -5,10 +5,13 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class FarmingHistory extends Model
+class FundraiserLedger extends Model
 {
     //
     use SoftDeletes;
+
+    protected $guarded = [];
+
     public function farmer()
     {
         return $this->belongsTo(Farmer::class);
@@ -22,5 +25,10 @@ class FarmingHistory extends Model
     public function farmingAddress()
     {
         return $this->belongsTo(FarmingAddress::class);
+    }
+
+    public function farmingStatus()
+    {
+        return $this->hasOne(FarmingStatus::class);
     }
 }

@@ -66,7 +66,7 @@
 					@if (isset($user->bio))
 						<p>{{ $user->bio }}</p>
 					@else
-						<p class="text-muted">No bio entered!</p>
+						<p class="text-muted font-italic">No bio entered!</p>
 					@endif
 				</div>
 			</div>
@@ -192,7 +192,7 @@
                             @endforeach
                         </ul>
                     @else
-                        <p class="text-muted">There's no farming history available for this farmer!</p>
+                        <p class="text-muted font-italic">There's no farming history available for this farmer!</p>
                     @endif
 				</div>
 			</div>
@@ -200,6 +200,12 @@
 	</div>
 
 	{{-- Farming History Timeline Ends --}}
+
+    {{-- Farmer's fundraisers --}}
+
+    @include('fundraiser._index')
+
+    {{-- Farmer's fundraisers Ends --}}
 
 {{-- Farmer Profile View Ends --}}
 
@@ -260,7 +266,7 @@
 					@if (isset($user->bio))
 						<p>{{ $user->bio }}</p>
 					@else
-						<p class="text-muted">No bio entered!</p>
+						<p class="text-muted font-italic">No bio entered!</p>
 					@endif
 				</div>
 			</div>

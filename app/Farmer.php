@@ -25,4 +25,9 @@ class Farmer extends Model
     {
         return $this->hasMany(FarmingHistory::class);
     }
+
+    public function fundraiserLedgers()
+    {
+        return $this->hasMany(FundraiserLedger::class);
+    }
 }

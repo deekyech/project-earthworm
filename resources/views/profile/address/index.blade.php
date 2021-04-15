@@ -56,7 +56,7 @@
                         </tbody>
                     </table>
                 @else
-                    <p class="text-muted">No farming addresses entered!</p>
+                    <p class="text-muted font-italic">No farming addresses entered!</p>
                 @endif
 			</div>
 		</div>
@@ -129,7 +129,7 @@
                         </tbody>
                     </table>
                 @else
-                    <p class="text-muted">No residential addresses entered!</p>
+                    <p class="text-muted font-italic">No residential addresses entered!</p>
                 @endif
 			</div>
 		</div>

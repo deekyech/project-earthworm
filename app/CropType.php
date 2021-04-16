@@ -9,6 +9,8 @@ class CropType extends Model
 {
     //
     use SoftDeletes;
+    protected $guarded = [];
+
     public function crop()
     {
         return $this->belongsTo(Crop::class);

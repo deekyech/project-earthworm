@@ -1,5 +1,6 @@
 <?php
 
+use App\ExpenseType;
 use App\FarmingHistory;
 use App\FarmingStatus;
 use Illuminate\Database\Seeder;
@@ -23,7 +24,8 @@ class DatabaseSeeder extends Seeder
             FarmingAddressSeeder::class,
             ResidentialAddressSeeder::class,
             FarmingHistorySeeder::class,
-            FarmingStatusSeeder::class
+            FarmingStatusSeeder::class,
+            ExpenseTypeSeeder::class
         ]);
     }
 }

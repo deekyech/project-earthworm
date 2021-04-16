@@ -13,8 +13,6 @@
 
 use App\User;
 
-
-
 Route::get('/', function () {
     return redirect('/login');
 });
@@ -38,8 +36,11 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('addresses', AddressesController::class)->except(['show']);
     Route::get('addresses/make_primary_address/{address_id}', 'AddressesController@makePrimaryAddress');
-    Route::resource('fundraiser', FundraiserLedgersController::class);
+    Route::resource('fundraiser', FundraiserLedgersController::class)->except(['show']);
     Route::get('fundraiser/croptype/{crop_id}', 'CropTypesController@getCropTypes');
+    Route::resource('expense', ExpenseLedgerController::class)->except(['show']);
+    Route::resource('crop-categories', CropsController::class, ["names" => "crops"]);
+    Route::resource('crops', CropTypesController::class, ["names" => "croptypes"]);
 });
 
 

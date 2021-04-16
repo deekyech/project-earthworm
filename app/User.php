@@ -58,6 +58,10 @@ class User extends Authenticatable
 		{
 			return "Investor";
 		}
+        else if($this->role == 4)
+        {
+            return "Job Volunteer";
+        }
 	}
 
 	public function getFarmerAttribute()
@@ -101,6 +105,11 @@ class User extends Authenticatable
         return $this->role == 1 ? 1 : 0;
     }
 
+    public function is_job_volunteer()
+    {
+        return $this->role == 4 ? 1 : 0;
+    }
+
     public function get_farmer_id()
     {
         if($this->is_farmer())
@@ -108,5 +117,15 @@ class User extends Authenticatable
             return Farmer::where('user_id', $this->id)->first()->id;
         }
         return null;
+    }
+
+    public function jobVolunteer()
+    {
+        return JobVolunteer::where('user_id', $this->id)->firstOrFail();
+    }
+
+    public function expenseLedgers()
+    {
+        return $this->hasMany(ExpenseLedger::class);
     }
 }

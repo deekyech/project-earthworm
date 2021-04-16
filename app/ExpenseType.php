@@ -5,14 +5,15 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Crop extends Model
+class ExpenseType extends Model
 {
     //
     use SoftDeletes;
     protected $guarded = [];
+    protected $table = "expense_type";
 
-    public function cropTypes()
+    public function expenseLedgers()
     {
-        return $this->hasMany(CropType::class);
+        return $this->belongsTo(ExpenseLedger::class);
     }
 }

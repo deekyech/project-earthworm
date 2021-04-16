@@ -50,14 +50,78 @@
                                     {{-- <span class="badge badge-count">5</span> --}}
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{ route('expense.create') }}">
+                                    <i class="flaticon-home"></i>
+                                    <p>Create Expense Request</p>
+                                    {{-- <span class="badge badge-count">5</span> --}}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('expense.index') }}">
+                                    <i class="flaticon-home"></i>
+                                    <p>My Expense Requests</p>
+                                    {{-- <span class="badge badge-count">5</span> --}}
+                                </a>
+                            </li>
                         @endif
                         @if (Auth::user()->is_investor())
                             {{-- Investor Sidebar Options --}}
-
+                            <li class="nav-item">
+                                <a href="">
+                                    <i class="flaticon-home"></i>
+                                    <p>New Fundraisers</p>
+                                    {{-- <span class="badge badge-count">5</span> --}}
+                                </a>
+                            </li>
                         @endif
                         @if (Auth::user()->is_admin())
                             {{-- Admin Sidebar Options --}}
-
+                            <li class="nav-item">
+                                <a href="">
+                                    <i class="flaticon-home"></i>
+                                    <p>Pending Expense Requests</p>
+                                    {{-- <span class="badge badge-count">5</span> --}}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="">
+                                    <i class="flaticon-home"></i>
+                                    <p>All Expense Requests</p>
+                                    {{-- <span class="badge badge-count">5</span> --}}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('crops.index') }}">
+                                    <i class="flaticon-home"></i>
+                                    <p>Manage Crop Categories</p>
+                                    {{-- <span class="badge badge-count">5</span> --}}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('croptypes.index') }}">
+                                    <i class="flaticon-home"></i>
+                                    <p>Manage Crops</p>
+                                    {{-- <span class="badge badge-count">5</span> --}}
+                                </a>
+                            </li>
+                        @endif
+                        @if (Auth::user()->is_job_volunteer())
+                            {{-- Job Volunteer Sidebar Options --}}
+                            <li class="nav-item">
+                                <a href="{{ route('expense.create') }}">
+                                    <i class="flaticon-home"></i>
+                                    <p>Create Expense Request</p>
+                                    {{-- <span class="badge badge-count">5</span> --}}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('expense.index') }}">
+                                    <i class="flaticon-home"></i>
+                                    <p>My Expense Requests</p>
+                                    {{-- <span class="badge badge-count">5</span> --}}
+                                </a>
+                            </li>
                         @endif
 					</ul>
 				</div>

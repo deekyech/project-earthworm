@@ -79,6 +79,7 @@
 								<select name="role" id="role" class="form-control">
 									<option value="2">Farmer</option>
 									<option value="3">Investor</option>
+                                    <option value="4">Job Volunteer</option>
 								</select>
 							</div>
 						</div>

@@ -3,7 +3,7 @@
 @section('page-content')
 <h4 class="page-title">User Profile</h4>
 
-@if ($user->role == '2')
+@if ($user->is_farmer())
 
 {{-- Farmer Profile View --}}
 
@@ -209,7 +209,7 @@
 
 {{-- Farmer Profile View Ends --}}
 
-@elseif ($user->role == '3')
+@elseif ($user->is_investor())
 
 	{{-- Investor Profile View --}}
 
@@ -358,6 +358,10 @@
 	{{-- Investor's Personal Details Ends --}}
 
 	{{-- Investor Profile View Ends --}}
+
+@elseif ($user->is_job_volunteer())
+
+    {{-- Job Volunteer Profile to be done --}}
 
 @endif
 @endsection

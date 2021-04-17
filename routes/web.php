@@ -39,6 +39,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('fundraiser', FundraiserLedgersController::class)->except(['show']);
     Route::get('fundraiser/croptype/{crop_id}', 'CropTypesController@getCropTypes');
     Route::resource('expense', ExpenseLedgerController::class)->except(['show']);
+    Route::put('expenseadmin/{expense}', 'ExpenseLedgerController@adminUpdate')->name('expense.adminUpdate');
     Route::resource('crop-categories', CropsController::class, ["names" => "crops"]);
     Route::resource('crops', CropTypesController::class, ["names" => "croptypes"]);
 });

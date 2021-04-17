@@ -25,7 +25,8 @@ class DatabaseSeeder extends Seeder
             ResidentialAddressSeeder::class,
             FarmingHistorySeeder::class,
             FarmingStatusSeeder::class,
-            ExpenseTypeSeeder::class
+            ExpenseTypeSeeder::class,
+            ExpenseLedgerStatusSeeder::class
         ]);
     }
 }

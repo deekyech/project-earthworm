@@ -78,16 +78,9 @@
                         @if (Auth::user()->is_admin())
                             {{-- Admin Sidebar Options --}}
                             <li class="nav-item">
-                                <a href="">
+                                <a href="{{ route('expense.index') }}">
                                     <i class="flaticon-home"></i>
-                                    <p>Pending Expense Requests</p>
-                                    {{-- <span class="badge badge-count">5</span> --}}
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="">
-                                    <i class="flaticon-home"></i>
-                                    <p>All Expense Requests</p>
+                                    <p>Expense Requests</p>
                                     {{-- <span class="badge badge-count">5</span> --}}
                                 </a>
                             </li>

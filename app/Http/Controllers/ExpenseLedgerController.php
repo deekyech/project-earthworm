@@ -11,7 +11,11 @@ class ExpenseLedgerController extends Controller
     //
     public function index()
     {
-        return view('expense.index', ['expenseLedgers' => ExpenseLedger::where('user_id', Auth::user()->id)->with('fundraiserLedger')->with('expenseType')->get()]);
+        if (Auth::user()->is_admin())
+        {
+            return view('expense.admin.index', ['pendingExpenseLedgers' => ExpenseLedger::where('expense_ledger_status_id', null)->with('fundraiserLedger')->with('user')->with('expenseType')->get(), 'completedExpenseLedgers' => ExpenseLedger::whereNotNull('expense_ledger_status_id')->with('fundraiserLedger')->with('user')->with('expenseType')->with('expenseLedgerStatus')->get()]);
+        }
+        return view('expense.index', ['pendingExpenseLedgers' => ExpenseLedger::where('user_id', Auth::user()->id)->where('expense_ledger_status_id', null)->with('fundraiserLedger')->with('expenseType')->with('expenseLedgerStatus')->get(), 'completedExpenseLedgers' =>  ExpenseLedger::where('user_id', Auth::user()->id)->whereNotNull('expense_ledger_status_id')->with('fundraiserLedger')->with('expenseType')->with('expenseLedgerStatus')->get()]);
     }
 
     public function create()
@@ -43,6 +47,10 @@ class ExpenseLedgerController extends Controller
 
     public function edit($expenseLedger)
     {
+        if (Auth::user()->is_admin())
+        {
+            return view('expense.admin.edit', ["expenseLedger" => ExpenseLedger::find($expenseLedger)]);
+        }
         return view('expense.edit', ["expenseLedger" => ExpenseLedger::find($expenseLedger)]);
     }
 
@@ -72,6 +80,13 @@ class ExpenseLedgerController extends Controller
         }
         $expenseLedger1->save();
         return redirect(route('home'));
+    }
+
+    public function adminUpdate(Request $request, $expenseLedger)
+    {
+        // dd($request);
+        ExpenseLedger::find($expenseLedger)->update(array_slice($request->all(), 2));
+        return redirect(route('expense.index'));
     }
 
     public function destroy($expenseLedger)

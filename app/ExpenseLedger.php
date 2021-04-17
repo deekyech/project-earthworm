@@ -30,4 +30,15 @@ class ExpenseLedger extends Model
     {
         return $this->user->is_farmer();
     }
+
+    public function expenseLedgerStatus()
+    {
+        return $this->belongsTo(ExpenseLedgerStatus::class);
+    }
+
+    public function getBillImageDownloadHtmlAttribute()
+    {
+        //Update this method to change bill image path to download button in all expense ledger index pages.
+        return $this->bill_image_path;
+    }
 }

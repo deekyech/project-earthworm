@@ -15,8 +15,9 @@ class UpdateExpenseLedgersTable extends Migration
     {
         Schema::table('expense_ledgers', function (Blueprint $table) {
             //
-            $table->unsignedInteger('approved_by')->nullable();
-            $table->timestamp('approved_at')->nullable();
+            $table->unsignedBigInteger('expense_ledger_status_id')->nullable();
+            $table->unsignedInteger('approved_amount')->nullable();
+            $table->foreign('expense_ledger_status_id')->references('id')->on('expense_ledger_status')->onDelete('cascade');
         });
     }
 
@@ -29,8 +30,7 @@ class UpdateExpenseLedgersTable extends Migration
     {
         Schema::table('expense_ledgers', function (Blueprint $table) {
             //
-            $table->dropColumn('approved_by');
-            $table->dropColumn('approved_at');
+            $table->dropColumn('expense_ledger_status_id');
         });
     }
 }

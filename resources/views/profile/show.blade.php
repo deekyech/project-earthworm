@@ -203,7 +203,7 @@
 
     {{-- Farmer's fundraisers --}}
 
-    @include('fundraiser._index')
+    {{-- Farmer's fundraisers view --}}
 
     {{-- Farmer's fundraisers Ends --}}
 

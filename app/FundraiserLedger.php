@@ -37,6 +37,11 @@ class FundraiserLedger extends Model
         return $this->hasMany(ExpenseLedger::class);
     }
 
+    public function creditLedgers()
+    {
+        return $this->hasMany(CreditLedger::class);
+    }
+
     public function getDisplayNameAttribute()
     {
         return $this->cropType->crop_type_name . ' @ ' . $this->farmingAddress->address->full_name;

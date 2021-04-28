@@ -17,8 +17,15 @@ class FundraiserLedgersController extends Controller
     public function index()
     {
         //
-        return view('fundraiser.index');
-        // ['fundraisers' => FundraiserLedger::where('farmer_id', Auth::user()->get_farmer_id())->with('crop_type, farming_address, farming_status')->get()]
+        if(Auth::user()->is_farmer())
+        {
+            return view('fundraiser.farmerindex', ['fundraisers' => FundraiserLedger::where('farmer_id', Auth::user()->get_farmer_id())->get()]);
+        }
+
+        if(Auth::user()->is_investor())
+        {
+            return view('fundraiser.investorindex', ['fundraisers' => FundraiserLedger::orderBy('created_at', 'DESC')->get()]);
+        }
     }
 
     /**

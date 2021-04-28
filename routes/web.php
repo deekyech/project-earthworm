@@ -42,6 +42,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('expenseadmin/{expense}', 'ExpenseLedgerController@adminUpdate')->name('expense.adminUpdate');
     Route::resource('crop-categories', CropsController::class, ["names" => "crops"]);
     Route::resource('crops', CropTypesController::class, ["names" => "croptypes"]);
+    Route::resource('fundraiser.credit', CreditLedgerController::class);
 });
 
 

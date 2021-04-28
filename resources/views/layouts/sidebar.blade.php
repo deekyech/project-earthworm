@@ -68,7 +68,7 @@
                         @if (Auth::user()->is_investor())
                             {{-- Investor Sidebar Options --}}
                             <li class="nav-item">
-                                <a href="">
+                                <a href="{{ route('fundraiser.index') }}">
                                     <i class="flaticon-home"></i>
                                     <p>New Fundraisers</p>
                                     {{-- <span class="badge badge-count">5</span> --}}

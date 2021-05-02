@@ -31,10 +31,10 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $expenseLedger->fundraiserLedger->display_name }}</td>
                                         <td>{{ $expenseLedger->expenseType->expense_name }}</td>
-                                        <td>{{ $expenseLedger->amount}}</td>
+                                        <td>{{ $expenseLedger->display_amount}}</td>
                                         <td>{{ $expenseLedger->notes }}</td>
                                         <td>{{ $expenseLedger->bill_image_download_html }}</td>
-                                        <td>@isset($expenseLedger->expense_ledger_status_id) <div class="btn @if ($expenseLedger->expense_ledger_status_id == 1) btn-success @elseif ($expenseLedger->expense_ledger_status_id == 2) btn-default @elseif ($expenseLedger->expense_ledger_status_id == 3) btn-danger @endif">{{ $expenseLedger->expenseLedgerStatus->expense_ledger_status_name }}</div> @else Yet to be viewed @endisset</td>
+                                        <td>@isset($expenseLedger->expense_ledger_status_id) <div class="w-100 btn @if ($expenseLedger->expense_ledger_status_id == 1) btn-success @elseif ($expenseLedger->expense_ledger_status_id == 2) btn-default @elseif ($expenseLedger->expense_ledger_status_id == 3) btn-danger @endif">{{ $expenseLedger->expenseLedgerStatus->expense_ledger_status_name }}</div> @else Yet to be viewed @endisset</td>
                                         <td><a href="{{ route('expense.edit', $expenseLedger->id) }}" class="btn btn-primary"><i class="fas fa-edit"></i></a></td>
                                         <td>
                                             <form action="{{ route('expense.destroy', $expenseLedger->id) }}" method="POST">
@@ -83,10 +83,10 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $expenseLedger->fundraiserLedger->display_name }}</td>
                                         <td>{{ $expenseLedger->expenseType->expense_name }}</td>
-                                        <td>{{ $expenseLedger->amount}}</td>
+                                        <td>{{ $expenseLedger->display_amount}}</td>
                                         <td>{{ $expenseLedger->notes }}</td>
                                         <td>{{ $expenseLedger->bill_image_download_html }}</td>
-                                        <td>@isset($expenseLedger->expense_ledger_status_id) <div class="btn @if ($expenseLedger->expense_ledger_status_id == 1) btn-success @elseif ($expenseLedger->expense_ledger_status_id == 2) btn-default @elseif ($expenseLedger->expense_ledger_status_id == 3) btn-danger @endif">{{ $expenseLedger->expenseLedgerStatus->expense_ledger_status_name }}</div> @else Yet to be viewed @endisset</td>
+                                        <td>@isset($expenseLedger->expense_ledger_status_id) <div class="w-100 btn @if ($expenseLedger->expense_ledger_status_id == 1) btn-success @elseif ($expenseLedger->expense_ledger_status_id == 2) btn-default @elseif ($expenseLedger->expense_ledger_status_id == 3) btn-danger @endif">{{ $expenseLedger->expenseLedgerStatus->expense_ledger_status_name }}</div> @else Yet to be viewed @endisset</td>
                                         <td>@if ($expenseLedger->expense_ledger_status_id == 1) {{ $expenseLedger->amount }} @elseif ($expenseLedger->expense_ledger_status_id == 2) {{ $expenseLedger->approved_amount }} @elseif ($expenseLedger->expense_ledger_status_id == 3) 0 @endif</td>
                                     </tr>
                                 @endforeach

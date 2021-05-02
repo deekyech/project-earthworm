@@ -9,7 +9,7 @@
                 <div class="card-title">Fundraiser Details:</div>
             </div>
             <div class="card-body">
-                {{ $fundraiser }}
+                Fundraiser collection left: {{ $fundraiser->collection_left }}
                 <br>
                 <form action="{{ route('fundraiser.credit.store', $fundraiser->id) }}" method="POST">
                     @csrf
@@ -20,7 +20,7 @@
                         <div class="col-12">
                             <div class="form-group form-group-default">
                                 <label for="amount">Amount to invest (In Rs):</label>
-                                <input type="number" name="amount" id="amount" class="form-control" required>
+                                <input type="number" name="amount" id="amount" class="form-control" min="1" max="{{ $fundraiser->collection_left }}" required>
                             </div>
                         </div>
                     </div>

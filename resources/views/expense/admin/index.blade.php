@@ -33,9 +33,9 @@
                                     <td><a href="{{ route('profile.show', $expenseLedger->user->username) }}">{{ $expenseLedger->user->name }}</a></td>
                                     <td>{{ $expenseLedger->fundraiserLedger->display_name }}</td>
                                     <td>{{ $expenseLedger->expenseType->expense_name }}</td>
-                                    <td>{{ $expenseLedger->amount}}</td>
+                                    <td>{{ $expenseLedger->display_amount}}</td>
                                     <td>{{ $expenseLedger->notes }}</td>
-                                    <td>{{ $expenseLedger->bill_image_download_html }}</td>
+                                    <td>{!! $expenseLedger->bill_image_download_html !!}</td>
                                     <td>
                                         <form action="{{ route('expense.adminUpdate', $expenseLedger->id) }}" method="POST">
                                             @csrf
@@ -95,10 +95,10 @@
                                     <td><a href="{{ route('profile.show', $expenseLedger->user->username) }}">{{ $expenseLedger->user->name }}</a></td>
                                     <td>{{ $expenseLedger->fundraiserLedger->display_name }}</td>
                                     <td>{{ $expenseLedger->expenseType->expense_name }}</td>
-                                    <td>{{ $expenseLedger->amount}}</td>
+                                    <td>{{ $expenseLedger->display_amount}}</td>
                                     <td>{{ $expenseLedger->notes }}</td>
                                     <td>{{ $expenseLedger->bill_image_download_html }}</td>
-                                    <td><div class="btn @if ($expenseLedger->expense_ledger_status_id == 1) btn-success @elseif ($expenseLedger->expense_ledger_status_id == 2) btn-default @elseif ($expenseLedger->expense_ledger_status_id == 3) btn-danger @endif">{{ $expenseLedger->expenseLedgerStatus->expense_ledger_status_name }}</div></td>
+                                    <td><div class="w-100 btn @if ($expenseLedger->expense_ledger_status_id == 1) btn-success @elseif ($expenseLedger->expense_ledger_status_id == 2) btn-default @elseif ($expenseLedger->expense_ledger_status_id == 3) btn-danger @endif">{{ $expenseLedger->expenseLedgerStatus->expense_ledger_status_name }}</div></td>
                                     <td>@if ($expenseLedger->expense_ledger_status_id == 1) {{ $expenseLedger->amount }} @elseif ($expenseLedger->expense_ledger_status_id == 2) {{ $expenseLedger->approved_amount }} @elseif ($expenseLedger->expense_ledger_status_id == 3) 0 @endif</td>
                                 </tr>
                             @endforeach

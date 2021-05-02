@@ -44,6 +44,13 @@ class User extends Authenticatable
 		return "https://ui-avatars.com/api/?name={$name}&rounded=true&size={$size}";
 	}
 
+    public function getLargeAvatarAttribute()
+    {
+        $size = 60;
+        $name = $this->name;
+        return "https://ui-avatars.com/api/?name={$name}&rounded=true&size={$size}";
+    }
+
 	public function getRoleNameAttribute()
 	{
 		if($this->role == 1)

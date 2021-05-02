@@ -2,8 +2,10 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\HtmlString;
 
 class FundraiserLedger extends Model
 {
@@ -29,7 +31,7 @@ class FundraiserLedger extends Model
 
     public function farmingStatus()
     {
-        return $this->hasOne(FarmingStatus::class);
+        return $this->belongsTo(FarmingStatus::class);
     }
 
     public function expenseLedgers()
@@ -45,5 +47,30 @@ class FundraiserLedger extends Model
     public function getDisplayNameAttribute()
     {
         return $this->cropType->crop_type_name . ' @ ' . $this->farmingAddress->address->full_name;
+    }
+
+    public function getEstimatedYieldByAttribute()
+    {
+        return Carbon::parse($this->estimated_yield_timestamp)->format('jS F, Y');
+    }
+
+    public function getDisplayAmountAttribute()
+    {
+        return new HtmlString('&#8377; ' . $this->amount);
+    }
+
+    public function getAmountCollectedAttribute()
+    {
+        return CreditLedger::where('fundraiser_ledger_id', $this->id)->sum('amount');
+    }
+
+    public function getDisplayAmountCollectedAttribute()
+    {
+        return new HtmlString('&#8377; ' . $this->amount_collected);
+    }
+
+    public function getCollectionLeftAttribute()
+    {
+        return ($this->amount - $this->amount_collected);
     }
 }

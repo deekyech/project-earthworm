@@ -19,12 +19,12 @@ class FundraiserLedgersController extends Controller
         //
         if(Auth::user()->is_farmer())
         {
-            return view('fundraiser.farmerindex', ['fundraisers' => FundraiserLedger::where('farmer_id', Auth::user()->get_farmer_id())->get()]);
+            return view('fundraiser.farmerindex', ['fundraisers' => FundraiserLedger::where('farmer_id', Auth::user()->get_farmer_id())->with('farmingAddress')->with('farmer.user')->get()]);
         }
 
         if(Auth::user()->is_investor())
         {
-            return view('fundraiser.investorindex', ['fundraisers' => FundraiserLedger::orderBy('created_at', 'DESC')->get()]);
+            return view('fundraiser.investorindex', ['fundraisers' => FundraiserLedger::orderBy('created_at', 'DESC')->with('farmingAddress')->with('farmer.user')->get()]);
         }
     }
 
@@ -59,9 +59,9 @@ class FundraiserLedgersController extends Controller
      * @param  \App\FundraiserLedger  $fundraiserLedger
      * @return \Illuminate\Http\Response
      */
-    public function show(FundraiserLedger $fundraiserLedger)
+    public function show($fundraiserLedger)
     {
-        //
+        return view('fundraiser.show', ["fundraiser" => FundraiserLedger::with('farmer.user')->with('farmingAddress.address')->with('cropType.crop')->with('farmingStatus')->with('creditLedgers.investor.user')->with('expenseLedgers.expenseType')->find($fundraiserLedger)]);
     }
 
     /**

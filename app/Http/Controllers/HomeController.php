@@ -25,4 +25,9 @@ class HomeController extends Controller
     {
         return redirect('/dashboard');
     }
+
+    public function landingPage()
+    {
+        return view('landing-page');
+    }
 }

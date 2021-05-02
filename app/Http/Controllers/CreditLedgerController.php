@@ -6,6 +6,7 @@ use App\CreditLedger;
 use App\FundraiserLedger;
 use App\PaymentTransaction;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CreditLedgerController extends Controller
 {
@@ -16,7 +17,7 @@ class CreditLedgerController extends Controller
      */
     public function index()
     {
-        //
+        return view('fundraiser.credit.investorportfolio', ['creditLedgers' => CreditLedger::where('investor_id', Auth::user()->investor()->id)->with('fundraiserLedger.farmer.user')->get()]);
     }
 
     /**

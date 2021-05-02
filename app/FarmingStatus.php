@@ -11,6 +11,6 @@ class FarmingStatus extends Model
 
     public function fundraiserLedgers()
     {
-        return $this->belongsTo(FundraiserLedger::class);
+        return $this->hasMany(FundraiserLedger::class);
     }
 }

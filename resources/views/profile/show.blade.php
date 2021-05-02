@@ -135,7 +135,9 @@
 								<div class="col-md-12">
 									<div class="form-group form-group-default">
 										<label>Primary Address</label>
-										<textarea class="form-control" placeholder="Address" disabled>{{ $user->primary_address->formattedAddressHTML() }}</textarea>
+										<textarea id="autosize" class="form-control" placeholder="Address" disabled>{{ $user->primary_address->formattedAddressHTML() }}</textarea>
+                                        <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/4.0.2/autosize.min.js"></script>
+                                        <script>autosize(document.querySelectorAll('#autosize'));</script>
 									</div>
 								</div>
 							</div>
@@ -335,7 +337,9 @@
 								<div class="col-md-12">
 									<div class="form-group form-group-default">
 										<label>Primary Address</label>
-										<textarea class="form-control" placeholder="Address" disabled>{{ $user->primary_address->formattedAddressHTML() }}</textarea>
+										<textarea class="form-control" placeholder="Address" id="autosize" disabled>{{ $user->primary_address->formattedAddressHTML() }}</textarea>
+                                        <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/4.0.2/autosize.min.js"></script>
+                                        <script>autosize(document.querySelectorAll('#autosize'));</script>
 									</div>
 								</div>
 							</div>

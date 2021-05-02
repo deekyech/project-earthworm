@@ -6,6 +6,7 @@ use App\Farmer;
 use App\User;
 use App\Http\Controllers\Controller;
 use App\Investor;
+use App\JobVolunteer;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -83,6 +84,11 @@ class RegisterController extends Controller
         if($user->role == 3)
         {
             Investor::create([
+                'user_id' => $user->id
+            ]);
+        }
+        if ($user->role == 4) {
+            JobVolunteer::create([
                 'user_id' => $user->id
             ]);
         }

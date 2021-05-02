@@ -14,10 +14,12 @@
 use App\User;
 
 Route::get('/', function () {
-    return redirect('/login');
+    return redirect('/earthworm');
 });
 
 Auth::routes();
+
+Route::get('/earthworm', 'HomeController@landingPage')->name('landingPage');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@index')->name('home');
@@ -36,13 +38,14 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('addresses', AddressesController::class)->except(['show']);
     Route::get('addresses/make_primary_address/{address_id}', 'AddressesController@makePrimaryAddress');
-    Route::resource('fundraiser', FundraiserLedgersController::class)->except(['show']);
+    Route::resource('fundraiser', FundraiserLedgersController::class);
     Route::get('fundraiser/croptype/{crop_id}', 'CropTypesController@getCropTypes');
     Route::resource('expense', ExpenseLedgerController::class)->except(['show']);
     Route::put('expenseadmin/{expense}', 'ExpenseLedgerController@adminUpdate')->name('expense.adminUpdate');
     Route::resource('crop-categories', CropsController::class, ["names" => "crops"]);
     Route::resource('crops', CropTypesController::class, ["names" => "croptypes"]);
-    Route::resource('fundraiser.credit', CreditLedgerController::class);
+    Route::resource('fundraiser.credit', CreditLedgerController::class)->except(['index', 'update', 'edit', 'destroy', 'show']);
+    Route::get('investorportfolio', 'CreditLedgerController@index')->name('investorportfolio');
 });
 
 

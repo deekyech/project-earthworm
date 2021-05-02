@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\HtmlString;
 
 class Address extends Model
 {
@@ -11,6 +12,6 @@ class Address extends Model
 	//
 	public function formattedAddressHTML()
 	{
-		return $this->full_name . '\r\n' . $this->line_1 . '\r\n' . $this->line_2 . '<br>' . $this->city . ', ' . $this->state . ' - ' . $this->pincode;
+		return new HtmlString($this->full_name . '&#13;&#10;' . $this->line_1 . '&#13;&#10;' . $this->line_2 . '&#13;&#10;' . $this->city . ', ' . $this->state . ' - ' . $this->pincode);
 	}
 }

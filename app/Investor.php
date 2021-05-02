@@ -15,4 +15,9 @@ class Investor extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function creditLedgers()
+    {
+        return $this->hasMany(CreditLedger::class);
+    }
 }

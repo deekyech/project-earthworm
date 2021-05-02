@@ -32,6 +32,7 @@ class UpdateUsersTable extends Migration
             DB::statement("alter table `users` modify `phone_no` varchar(191) null, modify `email_verified_at` timestamp null, modify `phone_no_verified_at` timestamp null, modify `dob` date null, modify `gender` int unsigned null, modify `role` int unsigned null, modify `created_by` int unsigned null, modify `updated_by` int unsigned null, modify `deleted_at` timestamp null, modify `additional_description` text null");
             DB::statement("alter table `farmers` modify `experience` int unsigned null, modify `created_by` int unsigned null, modify `updated_by` int unsigned null, modify `deleted_at` timestamp null, modify `additional_description` text null");
             DB::statement("alter table `investors` modify `created_by` int unsigned null, modify `updated_by` int unsigned null, modify `deleted_at` timestamp null, modify `additional_description` text null");
+            // DB::statement("alter table `fundraiser_ledgers` modify `end_timestamp` timestamp null, modify `deleted_at` timestamp null, modify `additional_description` text null");
             $table->string('username')->unique();
             $table->text('bio')->nullable();
             $table->decimal('average_rating')->default(0);

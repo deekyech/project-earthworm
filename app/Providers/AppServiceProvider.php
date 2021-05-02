@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use App\Address;
+use App\Crop;
+use App\CropType;
 use App\FarmingAddress;
 use App\ResidentialAddress;
 use Illuminate\Support\ServiceProvider;
@@ -54,6 +56,13 @@ class AppServiceProvider extends ServiceProvider
                 {
                     $primary_residential_address->makePrimaryAddress();
                 }
+            }
+        });
+
+        Crop::deleted(function ($crop) {
+            foreach( CropType::where('crop_id', $crop->id)->get() as $crop_type )
+            {
+                $crop_type->delete();
             }
         });
     }

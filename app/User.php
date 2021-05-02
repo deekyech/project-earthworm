@@ -44,6 +44,13 @@ class User extends Authenticatable
 		return "https://ui-avatars.com/api/?name={$name}&rounded=true&size={$size}";
 	}
 
+    public function getLargeAvatarAttribute()
+    {
+        $size = 60;
+        $name = $this->name;
+        return "https://ui-avatars.com/api/?name={$name}&rounded=true&size={$size}";
+    }
+
 	public function getRoleNameAttribute()
 	{
 		if($this->role == 1)
@@ -58,6 +65,10 @@ class User extends Authenticatable
 		{
 			return "Investor";
 		}
+        else if($this->role == 4)
+        {
+            return "Job Volunteer";
+        }
 	}
 
 	public function getFarmerAttribute()
@@ -85,4 +96,43 @@ class User extends Authenticatable
 		$residential_address = ResidentialAddress::where('user_id', $this->id)->where('is_primary', '1')->first();
         return isset($residential_address) ? $residential_address->address()->first() : null;
 	}
+
+    public function is_farmer()
+    {
+        return $this->role == 2 ? 1 : 0;
+    }
+
+    public function is_investor()
+    {
+        return $this->role == 3 ? 1 : 0;
+    }
+
+    public function is_admin()
+    {
+        return $this->role == 1 ? 1 : 0;
+    }
+
+    public function is_job_volunteer()
+    {
+        return $this->role == 4 ? 1 : 0;
+    }
+
+    public function get_farmer_id()
+    {
+        if($this->is_farmer())
+        {
+            return Farmer::where('user_id', $this->id)->first()->id;
+        }
+        return null;
+    }
+
+    public function jobVolunteer()
+    {
+        return JobVolunteer::where('user_id', $this->id)->firstOrFail();
+    }
+
+    public function expenseLedgers()
+    {
+        return $this->hasMany(ExpenseLedger::class);
+    }
 }

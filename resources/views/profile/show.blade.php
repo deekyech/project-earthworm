@@ -3,7 +3,7 @@
 @section('page-content')
 <h4 class="page-title">User Profile</h4>
 
-@if ($user->role == '2')
+@if ($user->is_farmer())
 
 {{-- Farmer Profile View --}}
 
@@ -66,7 +66,7 @@
 					@if (isset($user->bio))
 						<p>{{ $user->bio }}</p>
 					@else
-						<p class="text-muted">No bio entered!</p>
+						<p class="text-muted font-italic">No bio entered!</p>
 					@endif
 				</div>
 			</div>
@@ -135,7 +135,9 @@
 								<div class="col-md-12">
 									<div class="form-group form-group-default">
 										<label>Primary Address</label>
-										<textarea class="form-control" placeholder="Address" disabled>{{ $user->primary_address->formattedAddressHTML() }}</textarea>
+										<textarea id="autosize" class="form-control" placeholder="Address" disabled>{{ $user->primary_address->formattedAddressHTML() }}</textarea>
+                                        <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/4.0.2/autosize.min.js"></script>
+                                        <script>autosize(document.querySelectorAll('#autosize'));</script>
 									</div>
 								</div>
 							</div>
@@ -192,7 +194,7 @@
                             @endforeach
                         </ul>
                     @else
-                        <p class="text-muted">There's no farming history available for this farmer!</p>
+                        <p class="text-muted font-italic">There's no farming history available for this farmer!</p>
                     @endif
 				</div>
 			</div>
@@ -201,9 +203,15 @@
 
 	{{-- Farming History Timeline Ends --}}
 
+    {{-- Farmer's fundraisers --}}
+
+    {{-- Farmer's fundraisers view --}}
+
+    {{-- Farmer's fundraisers Ends --}}
+
 {{-- Farmer Profile View Ends --}}
 
-@elseif ($user->role == '3')
+@elseif ($user->is_investor())
 
 	{{-- Investor Profile View --}}
 
@@ -260,7 +268,7 @@
 					@if (isset($user->bio))
 						<p>{{ $user->bio }}</p>
 					@else
-						<p class="text-muted">No bio entered!</p>
+						<p class="text-muted font-italic">No bio entered!</p>
 					@endif
 				</div>
 			</div>
@@ -329,7 +337,9 @@
 								<div class="col-md-12">
 									<div class="form-group form-group-default">
 										<label>Primary Address</label>
-										<textarea class="form-control" placeholder="Address" disabled>{{ $user->primary_address->formattedAddressHTML() }}</textarea>
+										<textarea class="form-control" placeholder="Address" id="autosize" disabled>{{ $user->primary_address->formattedAddressHTML() }}</textarea>
+                                        <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/4.0.2/autosize.min.js"></script>
+                                        <script>autosize(document.querySelectorAll('#autosize'));</script>
 									</div>
 								</div>
 							</div>
@@ -352,6 +362,10 @@
 	{{-- Investor's Personal Details Ends --}}
 
 	{{-- Investor Profile View Ends --}}
+
+@elseif ($user->is_job_volunteer())
+
+    {{-- Job Volunteer Profile to be done --}}
 
 @endif
 @endsection

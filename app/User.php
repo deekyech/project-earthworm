@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -134,5 +135,10 @@ class User extends Authenticatable
     public function expenseLedgers()
     {
         return $this->hasMany(ExpenseLedger::class);
+    }
+
+    public function getMemberSinceAttribute()
+    {
+        return Carbon::now()->diffInDays($this->created_at);
     }
 }

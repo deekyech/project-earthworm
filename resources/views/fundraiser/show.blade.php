@@ -269,24 +269,6 @@
                                             @endif
                                         @endforeach
 									</ol>
-
-                                    {{-- @foreach ( $fundraiser->expenseLedgers as $expenseLedger )
-                                        <div class="d-flex align-items-center">
-                                            <div class="avatar avatar-online">
-                                                <span class="avatar-title rounded-circle border border-white bg-info">J</span>
-                                            </div>
-                                            <div class="flex-1 ml-3 pt-1">
-                                                <h5 class="text-uppercase fw-bold">{{ $expenseLedger->expenseType->expense_name }}</h5>
-                                                <span class="text-muted">{{ $expenseLedger->notes }}</span>
-                                            </div>
-                                            <div class="float-right pt-1">
-                                                <h3 class="fw-bold">{{ $expenseLedger->display_amount }}</h3>
-                                            </div>
-                                        </div>
-                                        @if (!$loop->last)
-                                            <div class="separator-dashed"></div>
-                                        @endif
-                                    @endforeach --}}
                                 @else
                                     <p class="text-muted font-italic">No Expense Requests made yet!</p>
                                 @endif

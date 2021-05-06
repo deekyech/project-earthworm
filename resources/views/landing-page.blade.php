@@ -66,13 +66,14 @@
                             <li><a href="#home" class="smooth-scroll">Home</a></li>
                             <li><a href="#services" class="smooth-scroll">What is Earthworm?</a></li>
                             <li><a href="#about" class="smooth-scroll">About</a></li>
-                            <li><a href="#work" class="smooth-scroll">Why invest with Earthworm?</a></li>
+                            {{-- <li><a href="#work" class="smooth-scroll">Why invest with Earthworm?</a></li> --}}
                             <li><a href="#team" class="smooth-scroll">Team</a></li>
-                            <li><a href="#testimonial" class="smooth-scroll">Testimonials</a></li>
                             {{-- <li><a href="#pricing" class="smooth-scroll">Pricing</a></li> --}}
                             <li><a href="#stats" class="smooth-scroll">Stats</a></li>
+                            <li><a href="#testimonial" class="smooth-scroll">Testimonials</a></li>
                             {{-- <li><a href="#clients" class="smooth-scroll">Clients</a></li> --}}
                             <li><a href="#contact" class="smooth-scroll">Contact</a></li>
+                            <li><a href="{{ route('login') }}">Login/Sign Up</a></li>
                         </ul>
                     </div>
                 </div>
@@ -90,8 +91,8 @@
                         <span>farmer's best friend!</span>
                     </div>
                     <!--.home-heading-->
-                    <div class="home-btn wow animated zoomIn mt-4">
-                        <a href="#work" class="btn btn-lg btn-general btn-white smooth-scroll" role="button" title="View Our Work">view our work</a>
+                    <div class="home-btn wow animated zoomIn">
+                        <a href="#services" class="btn btn-lg btn-general btn-white smooth-scroll" role="button" title="View Our Work">What is earthworm?</a>
                     </div>
                     <!--.home-btn-->
                 </div>
@@ -112,101 +113,11 @@
             </div>
             <div class="container">
                 <div class="row wow animated fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
-                    <div class="col-md-4 col-sm-6">
-                        <div class="service-item">
-                            <div class="service-item-icon">
-                                <i class="fa fa-paint-brush fa-3x"></i>
-                            </div>
-                            <div class="service-item-title">
-                                <h3>Web Design</h3>
-                            </div>
-                            <div class="service-item-desc">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            </div>
-                        </div>
-                        <!--.service-item-->
+                    <div class="col-md-12 mx-auto text-center text-justify">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus ipsum sit amet ornare elementum. Vivamus consequat neque a ante volutpat, non eleifend urna dignissim. Vivamus congue dui eget velit tempus, vel convallis massa dapibus. Donec tincidunt ipsum mauris, ultrices porta neque tempus a. Integer varius orci sit amet maximus fermentum. Donec condimentum, felis in ultricies vestibulum, lectus felis iaculis dui, ultrices interdum purus tortor vel augue. Praesent blandit sem ut bibendum sodales. Nulla pulvinar eu purus id molestie. Etiam pharetra eleifend felis eget laoreet. Quisque tellus mi, ultricies ac arcu a, sollicitudin ullamcorper nunc. Suspendisse potenti.
+                            <br />
+Etiam faucibus, urna et laoreet volutpat, lorem ipsum gravida odio, id pretium lectus massa ac risus. In mattis nulla in felis laoreet, at lacinia libero commodo. Aliquam at pretium sem. Fusce congue orci ac placerat viverra. Maecenas ut rutrum quam, sit amet efficitur risus. Ut posuere urna est, nec bibendum augue finibus ac. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus vel justo mauris. Praesent gravida at odio non dignissim. Suspendisse potenti. Donec molestie dui non est ornare, id venenatis massa vulputate. Integer mattis justo dui, quis consequat lacus semper vel. Nunc volutpat ullamcorper purus, elementum rutrum nunc rutrum id. Morbi in mauris ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque nisl mauris, condimentum quis varius et, ornare at metus.</p>
                     </div>
-                    <!--.col-md-4-->
-
-                    <div class="col-md-4 col-sm-6">
-                        <div class="service-item">
-                            <div class="service-item-icon">
-                                <i class="fa fa-laptop fa-3x"></i>
-                            </div>
-                            <div class="service-item-title">
-                                <h3>Web Development</h3>
-                            </div>
-                            <div class="service-item-desc">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            </div>
-                        </div>
-                        <!--.service-item-->
-                    </div>
-                    <!--.col-md-4-->
-
-                    <div class="col-md-4 col-sm-6">
-                        <div class="service-item">
-                            <div class="service-item-icon">
-                                <i class="fa fa-tablet fa-3x"></i>
-                            </div>
-                            <div class="service-item-title">
-                                <h3>Mobile Apps</h3>
-                            </div>
-                            <div class="service-item-desc">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            </div>
-                        </div>
-                        <!--.service-item-->
-                    </div>
-                    <!--.col-md-4-->
-
-                    <div class="col-md-4 col-sm-6">
-                        <div class="service-item">
-                            <div class="service-item-icon">
-                                <i class="fa fa-search fa-3x"></i>
-                            </div>
-                            <div class="service-item-title">
-                                <h3>SEO</h3>
-                            </div>
-                            <div class="service-item-desc">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            </div>
-                        </div>
-                        <!--.service-item-->
-                    </div>
-                    <!--.col-md-4-->
-
-                    <div class="col-md-4 col-sm-6">
-                        <div class="service-item">
-                            <div class="service-item-icon">
-                                <i class="fa fa-pencil-square-o fa-3x"></i>
-                            </div>
-                            <div class="service-item-title">
-                                <h3>UX Design</h3>
-                            </div>
-                            <div class="service-item-desc">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            </div>
-                        </div>
-                        <!--.service-item-->
-                    </div>
-                    <!--.col-md-4-->
-
-                    <div class="col-md-4 col-sm-6">
-                        <div class="service-item">
-                            <div class="service-item-icon">
-                                <i class="fa fa-support fa-3x"></i>
-                            </div>
-                            <div class="service-item-title">
-                                <h3>Support</h3>
-                            </div>
-                            <div class="service-item-desc">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            </div>
-                        </div>
-                        <!--.service-item-->
-                    </div>
-                    <!--.col-md-4-->
                 </div>
                 <!--.row-->
             </div>
@@ -230,7 +141,7 @@
                         <div class="content-box-outer">
                             <div class="content-box-inner">
                                 <div class="content-title wow animated fadeInDown" data-wow-duration=".5s" data-wow-delay=".2s">
-                                    <h3>About White Graphics</h3>
+                                    <h3>About Earthworm</h3>
                                     <div class="content-title-underline"></div>
                                 </div>
                                 <!--.content-title-->
@@ -256,7 +167,7 @@
     </section>
     <!--END OF ABOUT SECTION-->
 
-    <!--WORK SECTION-->
+    {{-- <!--WORK SECTION-->
     <section id="work">
         <div class="content-box">
             <div class="content-title wow animated fadeInDown" data-wow-duration=".5s" data-wow-delay=".2s">
@@ -327,7 +238,7 @@
         </div>
         <!--.content-box-->
     </section>
-    <!--END OF WORK SECTION-->
+    <!--END OF WORK SECTION--> --}}
 
     <!--TEAM SECTION-->
     <section id="team">
@@ -342,7 +253,7 @@
                         <div class="team-members owl-carousel owl-theme">
 
                             <div class="team-member">
-                                <img src="img/team/team-1.jpg" alt="Team Member 1" class="img-responsive">
+                                <img src="{{ asset('landing-page-assets/img/team/dkh.jpeg') }}" alt="Team Member 1" class="img-responsive">
                                 <div class="team-member-info">
                                     <h4 class="team-member-name">Dhiresh Hirani</h4>
                                     <h4 class="team-member-designation">Rollno: 1704146</h4>
@@ -357,7 +268,7 @@
 
 
                             <div class="team-member">
-                                <img src="img/team/team-2.jpg" alt="Team Member 2" class="img-responsive">
+                                <img src="{{ asset('landing-page-assets/img/team/arjun.jpg') }}" alt="Team Member 2" class="img-responsive">
                                 <div class="team-member-info">
                                     <h4 class="team-member-name">Arjun Parmani</h4>
                                     <h4 class="team-member-designation">Rollno: 1704148</h4>
@@ -372,7 +283,7 @@
 
 
                             <div class="team-member">
-                                <img src="img/team/team-3.jpg" alt="Team Member 3" class="img-responsive">
+                                <img src="{{ asset('landing-page-assets/img/team/patro.jpeg') }}" alt="Team Member 3" class="img-responsive">
                                 <div class="team-member-info">
                                     <h4 class="team-member-name">Pranay Patro</h4>
                                     <h4 class="team-member-designation">Rollno: 1704147</h4>
@@ -396,12 +307,68 @@
     </section>
     <!--END OF TEAM  SECTION-->
 
+    <!--STATS SECTION-->
+    <section id="stats">
+        <div class="stats-cover bg-parallax">
+            <div class="content-box">
+                <div class="content-title wow animated fadeInDown" data-wow-duration="1s" data-wow-delay=".3s">
+                    <h3 class="text-heading content-title-white">We Never Stop Improving</h3>
+                    <div class="content-title-underline"></div>
+                </div>
+                <div class="container">
+                    <div class="row wow animated fadeInUp text-center" data-wow-duration="1s" data-wow-delay=".3s">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="stats-item">
+                                <i class="fa fa-cloud-download fa-5x"></i>
+                                <h2><span class="counter">{{ App\Farmer::count() }}</span>+</h2>
+                                <p>Farmers</p>
+                            </div>
+                        </div>
+                        <!--.col-->
+
+                        <div class="col-md-3 col-sm-6">
+                            <div class="stats-item">
+                                <i class="fa fa-cloud-download fa-5x"></i>
+                                <h2><span class="counter">{{ App\Investor::count() }}</span>+</h2>
+                                <p>Investors</p>
+                            </div>
+                        </div>
+                        <!--.col-->
+
+                        <div class="col-md-3 col-sm-6">
+                            <div class="stats-item">
+                                <i class="fa fa-star-o fa-5x"></i>
+                                <h2><span class="counter">{{ App\FundraiserLedger::count() }}</span>+</h2>
+                                <p>Fundraisers</p>
+                            </div>
+                        </div>
+                        <!--.col-->
+
+                        <div class="col-md-3 col-sm-6">
+                            <div class="stats-item">
+                                <i class="fa fa-heart-o fa-5x"></i>
+                                <h2><span class="counter">{{ App\ExpenseLedger::count() }}</span>+</h2>
+                                <p>Expense Requests</p>
+                            </div>
+                        </div>
+                        <!--.col-->
+
+                    </div>
+                    <!--.row-->
+                </div>
+                <!--.container-->
+            </div>
+            <!--.content-box-->
+        </div>
+    </section>
+    <!--END OF STATS SECTION-->
+
     <!--TESTIMONIAL SECTION-->
     <section id="testimonial">
         <div class="testimonial-cover bg-parallax">
             <div class="content-box">
                 <div class="content-title wow animated fadeInDown" data-wow-duration="1s" data-wow-delay=".3s">
-                    <h3 class="content-title-white">What Out Customers Say</h3>
+                    <h3 class="content-title">What Out Customers Say</h3>
                     <div class="content-title-underline"></div>
                 </div>
                 <div class="container">
@@ -409,42 +376,42 @@
                         <div class="customers-testimonials text-center owl-carousel owl-theme">
 
                             <div class="testimonial">
-                                <img src="img/client/client-1.jpg" alt="testimonial" class="img-responsive img-circle">
+                                <img src="{{ asset('landing-page-assets/img/client/client-1.jpg') }}" alt="testimonial" class="img-responsive img-circle">
                                 <blockquote class="text-center">
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam repudiandae obcaecati in ipsum eum, tempore, debitis animi labore corrupti, ipsa error dolore accusantium perferendis aliquam quasi, eius libero. Ab, laudantium.</p>
                                 </blockquote>
                                 <div class="testimonial-author">
                                     <p>
-                                        <strong>Danial Watrous</strong>
-                                        <span>CEO &amp; Founder - Google</span>
+                                        <strong>Pinak Doshi</strong>
+                                        <span>Farmer &amp; Land Owner</span>
                                     </p>
                                 </div>
                             </div>
                             <!--.testimonial-->
 
                             <div class="testimonial">
-                                <img src="img/client/client-2.jpg" alt="testimonial" class="img-responsive img-circle">
+                                <img src="{{ asset('landing-page-assets/img/client/client-2.jpg') }}" alt="testimonial" class="img-responsive img-circle">
                                 <blockquote class="text-center">
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam repudiandae obcaecati in ipsum eum, tempore, debitis animi labore corrupti, ipsa error dolore accusantium perferendis aliquam quasi, eius libero. Ab, laudantium.</p>
                                 </blockquote>
                                 <div class="testimonial-author">
                                     <p>
-                                        <strong>Danial Watrous</strong>
-                                        <span>CEO &amp; Founder - Google</span>
+                                        <strong>Dharmik Doshi</strong>
+                                        <span>Investor</span>
                                     </p>
                                 </div>
                             </div>
                             <!--.testimonial-->
 
                             <div class="testimonial">
-                                <img src="img/client/client-3.jpg" alt="testimonial" class="img-responsive img-circle">
+                                <img src="{{ asset('landing-page-assets/img/client/client-3.jpg') }}" alt="testimonial" class="img-responsive img-circle">
                                 <blockquote class="text-center">
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam repudiandae obcaecati in ipsum eum, tempore, debitis animi labore corrupti, ipsa error dolore accusantium perferendis aliquam quasi, eius libero. Ab, laudantium.</p>
                                 </blockquote>
                                 <div class="testimonial-author">
                                     <p>
-                                        <strong>Danial Watrous</strong>
-                                        <span>CEO &amp; Founder - Google</span>
+                                        <strong>Vandana Doshi</strong>
+                                        <span>Investor</span>
                                     </p>
                                 </div>
                             </div>
@@ -460,7 +427,8 @@
         </div>
     </section>
     <!--END OF TESTIMONIAL  SECTION-->
-    <!--PRICING TABLE SECTION-->
+
+    {{-- <!--PRICING TABLE SECTION-->
     <section id="pricing">
         <div class="content-box">
             <div class="content-title wow animated fadeInDown" data-wow-duration="1s" data-wow-delay=".3s">
@@ -548,64 +516,11 @@
         </div>
         <!--.content-box-->
     </section>
-    <!--END OF PRICING TABLE SECTION-->
+    <!--END OF PRICING TABLE SECTION--> --}}
 
-    <!--STATS SECTION-->
-    <section id="stats">
-        <div class="stats-cover bg-parallax">
-            <div class="content-box">
-                <div class="content-title wow animated fadeInDown" data-wow-duration="1s" data-wow-delay=".3s">
-                    <h3 class="text-heading content-title-white">We Never Stop Improving</h3>
-                    <div class="content-title-underline"></div>
-                </div>
-                <div class="container">
-                    <div class="row wow animated fadeInUp text-center" data-wow-duration="1s" data-wow-delay=".3s">
-                        <div class="col-md-3 col-sm-6">
-                            <div class="stats-item">
-                                <i class="fa fa-cloud-download fa-5x"></i>
-                                <h2><span class="counter">1590</span>+</h2>
-                                <p>Downloads</p>
-                            </div>
-                        </div>
-                        <!--.col-->
 
-                        <div class="col-md-3 col-sm-6">
-                            <div class="stats-item">
-                                <i class="fa fa-star-o fa-5x"></i>
-                                <h2><span class="counter">3500</span>+</h2>
-                                <p>Awards</p>
-                            </div>
-                        </div>
-                        <!--.col-->
 
-                        <div class="col-md-3 col-sm-6">
-                            <div class="stats-item">
-                                <i class="fa fa-heart-o fa-5x"></i>
-                                <h2><span class="counter">1199</span>+</h2>
-                                <p>Likes</p>
-                            </div>
-                        </div>
-                        <!--.col-->
-
-                        <div class="col-md-3 col-sm-6">
-                            <div class="stats-item">
-                                <i class="fa fa-check fa-5x"></i>
-                                <h2><span class="counter">2200</span>+</h2>
-                                <p>Recomended</p>
-                            </div>
-                        </div>
-                        <!--.col-->
-                    </div>
-                    <!--.row-->
-                </div>
-                <!--.container-->
-            </div>
-            <!--.content-box-->
-        </div>
-    </section>
-    <!--END OF STATS SECTION-->
-
-    <!--CLIENTS SECTION-->
+    {{-- <!--CLIENTS SECTION-->
     <section id="clients">
         <div class="content-box">
             <div class="content-title wow animated fadeInDown" data-wow-duration="1s" data-wow-delay=".3s">
@@ -633,7 +548,7 @@
         </div>
         <!--.content-box-->
     </section>
-    <!--END OF CLIENTS SECTION-->
+    <!--END OF CLIENTS SECTION--> --}}
 
     <!--FOOTER SECTION-->
     <footer id="contact">
@@ -643,7 +558,7 @@
                     <div class="col-md-6">
                         <div class="contact-left">
                             <h3>Earthworm</h3>
-                            <p>We believe in <strong>Simple</strong>, <strong>Clean</strong> &amp; <strong>Modern</strong> Design Standards with Responsive Approach. Browse the amazing work of our company.</p>
+                            <p>We believe in <strong>Empowerment</strong>, <strong>Upliftment</strong> &amp; <strong>Enrichment</strong> of the farmers of India. We aspire to free the farmers from debts and make them aatma-nirbhar!</p>
                             <div class="contact-info">
                                 <address>
                                         <strong>Headquarters:</strong>
@@ -699,13 +614,13 @@
                         <div class="footer-menu">
                             <ul>
                                 <li><a href="#home">Home</a>|</li>
-                                <li><a href="#services">Services</a>|</li>
+                                <li><a href="#services">What is earthworm?</a>|</li>
                                 <li><a href="#about">About</a>|</li>
-                                <li><a href="#work">Work</a>|</li>
+                                {{-- <li><a href="#work">Work</a>|</li> --}}
                                 <li><a href="#team">Team</a>|</li>
-                                <li><a href="#testimonial">Testimonial</a>|</li>
-                                <li><a href="#pricing">Pricing</a>|</li>
-                                <li><a href="#stats">Stats</a></li>
+                                {{-- <li><a href="#pricing">Pricing</a>|</li> --}}
+                                <li><a href="#stats">Stats</a>|</li>
+                                <li><a href="#testimonial">Testimonial</a></li>
                             </ul>
                         </div>
                     </div>

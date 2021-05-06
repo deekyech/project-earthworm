@@ -101,6 +101,7 @@ p{
     font-size: 6.5em;
     font-weight: bold;
     margin: 20px 0;
+    margin-bottom: 0;
     /* text-transform: uppercase; */
 }
 
@@ -108,6 +109,10 @@ p{
     color: #fff;
     /* font-weight: bold; */
     font-size: 3em;
+}
+
+.home-heading{
+    margin-bottom: 20px;
 }
 
 /***************************************************************
@@ -308,7 +313,7 @@ h4.team-member-designation{
 ********************************************************/
 
 .testimonial-cover{
-    background-image: url("../img/bg-testimonials.jpg");
+    /* background-image: url("../img/bg-testimonials.jpg"); */
 }
 .customers-testimonials{
     padding: 50px 0;
@@ -324,13 +329,13 @@ h4.team-member-designation{
     font-family: Georgia, Times, serif;
     font-style: italic;
     padding: 10px 150px;
-    color: #fff;
+    /* color: #fff; */
     margin: 0 auto;
     position: relative;
 
 }
 .testimonial p{
-    color: #fff;
+    /* color: #fff; */
 }
 .testimonial blockquote p{
 /*    width: 70%;*/
@@ -425,7 +430,7 @@ ul.pricing-spec li p{
                 STATS SECTION
 ********************************************************/
 .stats-cover{
-    background-image: url("../img/bg-stats.jpg");
+    background-image: url("../img/pexels-jose-aragones-860577.jpg");
 }
 .stats-cover .content-box{
     background-color: rgba(0, 0, 0, 0.7);

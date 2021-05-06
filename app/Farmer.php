@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
 
 class Farmer extends Model
 {
@@ -29,5 +31,21 @@ class Farmer extends Model
     public function fundraiserLedgers()
     {
         return $this->hasMany(FundraiserLedger::class);
+    }
+
+    //Attributes
+    public function getExperienceAttribute()
+    {
+        return Carbon::now()->diffInYears($this->farmingHistories->min('start_date'));
+    }
+
+    public function getFundraisersAttribute()
+    {
+        return $this->fundraiserLedgers->count();
+    }
+
+    public function getInvestorsAttribute()
+    {
+        return CreditLedger::whereIn('fundraiser_ledger_id', $this->fundraiserLedgers->pluck('id')->toArray())->distinct()->count('investor_id');
     }
 }

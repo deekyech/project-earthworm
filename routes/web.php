@@ -12,12 +12,18 @@
 */
 
 use App\User;
+use Illuminate\Support\Facades\Auth;
+
+Auth::routes();
 
 Route::get('/', function () {
+    if(Auth::check())
+    {
+        return redirect(route('dashboard'));
+    }
     return redirect('/earthworm');
 });
 
-Auth::routes();
 
 Route::get('/earthworm', 'HomeController@landingPage')->name('landingPage');
 
@@ -29,9 +35,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    /* Route::get('/profile', function() {
-        return view('profile');
-    })->name('profile'); */
 
     Route::resource('profile', ProfileController::class)->except(['index', 'show', 'create', 'store']);
     Route::get('profile/{username}', 'ProfileController@show')->name('profile.show');

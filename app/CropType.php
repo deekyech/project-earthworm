@@ -20,4 +20,9 @@ class CropType extends Model
     {
         return $this->hasMany(FundraiserLedger::class);
     }
+
+    public function farmingHistories()
+    {
+        return $this->hasMany(FarmingHistory::class);
+    }
 }

@@ -8,10 +8,9 @@
 {{-- Farmer Profile View --}}
 
 	<div class="row">
-
 		<div class="col-md-12">
 			<div class="card card-profile card-secondary">
-				<div class="card-header" style="background-image: url('../assets/img/blogpost.jpg')">
+				<div class="card-header" style="background-image: url('{{ asset('landing-page-assets/img/608ea7db6d254.jpg') }}'); background-size:cover;">
 					<div class="profile-picture">
 						<div class="avatar avatar-xl">
 							<img src="{{ $user->avatar }}" alt="..." class="avatar-img rounded-circle">
@@ -29,22 +28,19 @@
 							<div class="title">Experience</div>
 						</div>
 						<div class="col">
-							<div class="number">{{ count($user->farmer()->farmingHistories()->get()) }}</div>
-							<div class="title">Crops Grown</div>
+							<div class="number">{{ $user->farmer()->fundraisers }}</div>
+							<div class="title">Fundraisers</div>
 						</div>
 						<div class="col">
-							<div class="number">{{ count($user->farmer()->farmingAddresses()->get()) }}</div>
+							<div class="number">{{ $user->farmer()->farmingAddresses()->count() }}</div>
 							<div class="title">Farms</div>
 						</div>
 						<div class="col">
-							<div class="number">{{ $user->average_rating }}</div>
-							<div class="title">Rating</div>
+							<div class="number">{{ $user->farmer()->investors }}</div>
+							<div class="title">Investors</div>
 						</div>
 					</div>
-
-
 				</div>
-
 			</div>
 		</div>
 	</div>
@@ -93,7 +89,7 @@
 							<div class="col-md-12">
 								<div class="form-group form-group-default">
 									<label>Email</label>
-									<input type="email" class="form-control" placeholder="Email" value="{{ $user->email }}" @if ($user->id == Auth::user()->id) disabled @endif>
+									<input type="email" class="form-control" placeholder="Email" value="{{ $user->email }}" {{-- @if ($user->id == Auth::user()->id) disabled @endif --}}>
 								</div>
 							</div>
 						</div>
@@ -135,7 +131,7 @@
 								<div class="col-md-12">
 									<div class="form-group form-group-default">
 										<label>Primary Address</label>
-										<textarea id="autosize" class="form-control" placeholder="Address" disabled>{{ $user->primary_address->formattedAddressHTML() }}</textarea>
+										<textarea id="autosize" class="form-control" placeholder="Address">{{ $user->primary_address->formattedAddressHTML() }}</textarea>
                                         <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/4.0.2/autosize.min.js"></script>
                                         <script>autosize(document.querySelectorAll('#autosize'));</script>
 									</div>
@@ -176,8 +172,7 @@
                                 @else
                                     <li class="timeline-inverted">
                                 @endif
-
-                                    <div class="timeline-badge"><i class="flaticon-message"></i></div>
+                                    <div class="timeline-badge {{ array("btn-primary", "btn-warning", "btn-secondary", "btn-success", "btn-danger")[rand(0, 4)] }}"><i class="fas fa-cannabis text-white"></i></div>
                                     <div class="timeline-panel">
                                         <div class="timeline-heading">
                                             <h4 class="timeline-title">{{ $farming_history->cropType()->first()->crop_type_name }}</h4>
@@ -219,7 +214,7 @@
 
 		<div class="col-md-12">
 			<div class="card card-profile card-secondary">
-				<div class="card-header" style="background-image: url('../assets/img/blogpost.jpg')">
+				<div class="card-header" style="background-image: url('{{ asset('landing-page-assets/img/608ea7db6d254.jpg') }}'); background-size:cover;">
 					<div class="profile-picture">
 						<div class="avatar avatar-xl">
 							<img src="{{ $user->avatar }}" alt="..." class="avatar-img rounded-circle">
@@ -233,22 +228,23 @@
 					</div>
 					<div class="row user-stats text-center">
 						<div class="col">
-							<div class="number">{{ '5 years' }}</div>
+							<div class="number">{{ $user->member_since . " d" }}</div>
 							<div class="title">Eartworm Member</div>
 						</div>
 						<div class="col">
-							<div class="number">{{ '213' }}</div>
+							<div class="number">{{ $user->investor()->creditLedgers->count() }}</div>
 							<div class="title">Fundraisers Funded</div>
 						</div>
 						<div class="col">
-							<div class="number">{{ $user->average_rating }}</div>
-							<div class="title">Rating</div>
+							<div class="number">{{ $user->investor()->farmers_helped }}</div>
+							<div class="title">Farmers Saved</div>
+						</div>
+                        <div class="col">
+							<div class="number">{{ $user->investor()->display_total_investment }}</div>
+							<div class="title">Total Investment</div>
 						</div>
 					</div>
-
-
 				</div>
-
 			</div>
 		</div>
 	</div>
@@ -295,7 +291,7 @@
 							<div class="col-md-12">
 								<div class="form-group form-group-default">
 									<label>Email</label>
-									<input type="email" class="form-control" placeholder="Email" value="{{ $user->email }}" @if ($user->id == Auth::user()->id) disabled @endif>
+									<input type="email" class="form-control" placeholder="Email" value="{{ $user->email }}" {{-- @if ($user->id == Auth::user()->id) disabled @endif --}}>
 								</div>
 							</div>
 						</div>
@@ -337,7 +333,7 @@
 								<div class="col-md-12">
 									<div class="form-group form-group-default">
 										<label>Primary Address</label>
-										<textarea class="form-control" placeholder="Address" id="autosize" disabled>{{ $user->primary_address->formattedAddressHTML() }}</textarea>
+										<textarea class="form-control" placeholder="Address" id="autosize">{{ $user->primary_address->formattedAddressHTML() }}</textarea>
                                         <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/4.0.2/autosize.min.js"></script>
                                         <script>autosize(document.querySelectorAll('#autosize'));</script>
 									</div>

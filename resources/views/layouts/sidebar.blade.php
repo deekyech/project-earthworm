@@ -33,14 +33,14 @@
                 </div>
             </div>
             <ul class="nav">
+                <li class="nav-item">
+                    <a href="{{ route('dashboard') }}">
+                        <i class="fas fa-home"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
                 @if (Auth::user()->is_farmer())
                     {{-- Farmer Sidebar Options --}}
-                    <li class="nav-item">
-                        <a href="../index.html">
-                            <i class="fas fa-home"></i>
-                            <p>Dashboard</p>
-                        </a>
-                    </li>
                     <li class="nav-section">
                         <span class="sidebar-mini-icon">
                             <i class="fa fa-ellipsis-h"></i>
@@ -92,12 +92,6 @@
                 @endif
                 @if (Auth::user()->is_investor())
                     {{-- Investor Sidebar Options --}}
-                    <li class="nav-item">
-                        <a href="">
-                            <i class="fas fa-home"></i>
-                            <p>Dashboard</p>
-                        </a>
-                    </li>
                     <li class="nav-section">
                         <span class="sidebar-mini-icon">
                             <i class="fa fa-ellipsis-h"></i>
@@ -119,12 +113,6 @@
                 @endif
                 @if (Auth::user()->is_admin())
                     {{-- Admin Sidebar Options --}}
-                    <li class="nav-item">
-                        <a href="">
-                            <i class="fas fa-home"></i>
-                            <p>Dashboard</p>
-                        </a>
-                    </li>
                     <li class="nav-section">
                         <span class="sidebar-mini-icon">
                             <i class="fa fa-ellipsis-h"></i>
@@ -152,12 +140,6 @@
                 @endif
                 @if (Auth::user()->is_job_volunteer())
                     {{-- Job Volunteer Sidebar Options --}}
-                    <li class="nav-item">
-                        <a href="">
-                            <i class="fas fa-home"></i>
-                            <p>Dashboard</p>
-                        </a>
-                    </li>
                     <li class="nav-section">
                         <span class="sidebar-mini-icon">
                             <i class="fa fa-ellipsis-h"></i>

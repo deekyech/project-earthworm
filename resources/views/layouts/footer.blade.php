@@ -3,8 +3,8 @@
         <nav class="pull-left">
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="http://www.themekita.com">
-                        ThemeKita
+                    <a class="nav-link" href="#">
+                        Project Earthworm
                     </a>
                 </li>
                 <li class="nav-item">
@@ -20,7 +20,7 @@
             </ul>
         </nav>
         <div class="copyright ml-auto">
-            2018, made with <i class="fa fa-heart heart text-danger"></i> by <a href="http://www.themekita.com">ThemeKita</a>
+            2021, made with <i class="fa fa-heart heart text-danger"></i> by <a href="#">Group 16</a>
         </div>
     </div>
 </footer>

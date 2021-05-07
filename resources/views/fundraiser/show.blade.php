@@ -218,6 +218,16 @@
                     </div>
                 </div>
                 <div class="row">
+                    <div class="col-12">
+                        <div class="form-group form-group-default">
+                            <label>Farm Address</label>
+                            <textarea class="form-control" placeholder="Address" id="autosize">{{ $fundraiser->farmingAddress->address->formattedAddressHTML() }}</textarea>
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/4.0.2/autosize.min.js"></script>
+                            <script>autosize(document.querySelectorAll('#autosize'));</script>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-6">
                         <div class="card">
                             <div class="card-header">
@@ -255,7 +265,7 @@
                             <div class="card-body">
                                 @if (count($fundraiser->expenseLedgers) > 0)
                                     <ol class="activity-feed">
-                                        @foreach ( $fundraiser->expenseLedgers->sortBy(['created_at', 'desc']) as $expenseLedger )
+                                        @foreach ( $fundraiser->expenseLedgers->sortByDesc('created_at') as $expenseLedger )
                                             @if ($expenseLedger->expense_ledger_status_id != 3)
                                                 <li class="feed-item feed-item-success d-flex align-items-center">
                                                     <div class="flex-1">

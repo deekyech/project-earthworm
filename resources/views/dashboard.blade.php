@@ -122,7 +122,7 @@
             <div class="card-body">
                 @if (count(Auth::user()->expenseLedgers) > 0)
                     <ol class="activity-feed">
-                        @foreach ( Auth::user()->expenseLedgers->sortBy(['created_at', 'desc']) as $expenseLedger )
+                        @foreach ( Auth::user()->expenseLedgers->sortByDesc('created_at') as $expenseLedger )
                             @if ($expenseLedger->expense_ledger_status_id != 3)
                                 <li class="feed-item feed-item-success d-flex align-items-center">
                                     <div class="flex-1">

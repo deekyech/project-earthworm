@@ -96,7 +96,6 @@
 							<div class="col-12">
 								<div class="">
 									<input class="" type="checkbox" name="is_primary" id="is_primary" value="1" style="-webkit-appearance: checkbox">
-									{{-- <input class="" type="hidden" name="is_primary" value="0"> --}}
 									<label class="" for="is_primary">Make Primary Address</label>
 								</div>
 							</div>
@@ -106,7 +105,6 @@
 							<div class="col-12">
 								<div class="">
 									<input class="" type="checkbox" name="is_primary" id="is_primary" value="1" style="-webkit-appearance: checkbox">
-									{{-- <input class="" type="hidden" name="is_primary" value="0"> --}}
 									<label class="" for="is_primary">Make Primary Address</label>
 								</div>
 							</div>
@@ -123,7 +121,6 @@
 
 @section('dynamicjslinks')
 <script>
-    // $('#isPrimaryDiv').hide();
 	$('input[type=radio][name=address_type]').on('change', function() {
         console.log("In function");
 		switch ($(this).val()) {

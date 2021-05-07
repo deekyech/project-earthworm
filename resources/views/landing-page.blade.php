@@ -114,9 +114,18 @@
             <div class="container">
                 <div class="row wow animated fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
                     <div class="col-md-12 mx-auto text-center text-justify">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus ipsum sit amet ornare elementum. Vivamus consequat neque a ante volutpat, non eleifend urna dignissim. Vivamus congue dui eget velit tempus, vel convallis massa dapibus. Donec tincidunt ipsum mauris, ultrices porta neque tempus a. Integer varius orci sit amet maximus fermentum. Donec condimentum, felis in ultricies vestibulum, lectus felis iaculis dui, ultrices interdum purus tortor vel augue. Praesent blandit sem ut bibendum sodales. Nulla pulvinar eu purus id molestie. Etiam pharetra eleifend felis eget laoreet. Quisque tellus mi, ultricies ac arcu a, sollicitudin ullamcorper nunc. Suspendisse potenti.
-                            <br />
-Etiam faucibus, urna et laoreet volutpat, lorem ipsum gravida odio, id pretium lectus massa ac risus. In mattis nulla in felis laoreet, at lacinia libero commodo. Aliquam at pretium sem. Fusce congue orci ac placerat viverra. Maecenas ut rutrum quam, sit amet efficitur risus. Ut posuere urna est, nec bibendum augue finibus ac. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus vel justo mauris. Praesent gravida at odio non dignissim. Suspendisse potenti. Donec molestie dui non est ornare, id venenatis massa vulputate. Integer mattis justo dui, quis consequat lacus semper vel. Nunc volutpat ullamcorper purus, elementum rutrum nunc rutrum id. Morbi in mauris ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque nisl mauris, condimentum quis varius et, ornare at metus.</p>
+                        <p>
+                            Indian farmers are highly distressed about outstanding bank loans piling up due to successive crop failures. Adverse climatic conditions, unpredictable weather, short of rainfall, pests and diseases, poor farming practices or neglect by farmers can end up in crop failures and cause immense loss to farmers. Every year, Government of India spends a vast sum of money to waive off these loans.
+                        </p>
+                        <p>
+                            Project Earthworm aims to come up with a solution that can save farmers from inescapable debt and also help the Government of India save a huge amount of money every year. In the urban cities, the people have a feeling of compassion for the farmers who work so hard and still lead such unfair lives. Our solution is to make a portal that will allow any person to provide these farmers with monetary help. The sponsor in return gets an incentive in the form of organic produce. The farmers can crowdsource their expense and need not opt for a bank loan.
+                        </p>
+                        <p>
+                            If the harvest is successful, then the farmer, as a loan obligation, gives a chunk of the produce to the sponsor, who gets an unadulterated farm fresh organic supply of the crop. Given that the demand for farm fresh organic supply is ever rising in the cities, the sponsor gets a trustworthy source of organic supply at a fraction of the price charged by big brands in the name of organic food.
+                        </p>
+                        <p>
+                            If the harvest fails, the farmer has no obligation towards the sponsor. This helps the farmer to remain debt free and the sponsor has saved the farmer from going into debt.
+                        </p>
                     </div>
                 </div>
                 <!--.row-->
@@ -145,12 +154,12 @@ Etiam faucibus, urna et laoreet volutpat, lorem ipsum gravida odio, id pretium l
                                     <div class="content-title-underline"></div>
                                 </div>
                                 <!--.content-title-->
-                                <div class="about-desc wow animated fadeInDown" data-wow-duration=".5s" data-wow-delay=".2s">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam quo, veritatis consectetur nesciunt minima doloribus voluptas similique, fugit eum ad possimus. Eveniet aliquid fugiat repudiandae assumenda soluta! Ducimus labore, aut.</p>
+                                <div class="about-desc wow animated fadeInDown text-justify" data-wow-duration=".5s" data-wow-delay=".2s">
+                                    <p>Project Earthworm is an initiative by three students from Computer Engineering Department of the Thadomal Shahani Engineering College. The idea behind the project is to uplift the farmers from huge debts, free them from ruthless bankers and money-lenders, and to make them aatma-nirbhar!</p>
                                 </div>
                                 <!--description-->
                                 <div class="about-btn">
-                                    <a href="#work" title="Our Work" class="btn btn-lg btn-general btn-blue wow animated fadeInUp smooth-scroll" data-wow-duration=".5s" data-wow-delay=".2s">our work</a>
+                                    <a href="#team" title="View Our Team" class="btn btn-lg btn-general btn-blue wow animated fadeInUp smooth-scroll" data-wow-duration=".5s" data-wow-delay=".2s">view our team</a>
                                 </div>
                             </div>
                             <!--inner box-->
@@ -166,79 +175,6 @@ Etiam faucibus, urna et laoreet volutpat, lorem ipsum gravida odio, id pretium l
         <!--.container-->
     </section>
     <!--END OF ABOUT SECTION-->
-
-    {{-- <!--WORK SECTION-->
-    <section id="work">
-        <div class="content-box">
-            <div class="content-title wow animated fadeInDown" data-wow-duration=".5s" data-wow-delay=".2s">
-                <h3>Our Work</h3>
-                <div class="content-title-underline"></div>
-            </div>
-            <div class="container-fluid">
-                <div class="row no-gutters wow animated fadeInUp">
-                    <div class="col-md-3 col-sm-4 col-xs-6">
-                        <div class="img-wrapper">
-                            <a href="img/work/1.jpg" title="Our Work Description goes here!"><img src="img/work/1.jpg" alt="" class="img-responsive"></a>
-                        </div>
-                    </div>
-                    <!--work 1-->
-
-                    <div class="col-md-3 col-sm-4 col-xs-6">
-                        <div class="img-wrapper">
-                            <a href="img/work/2.jpg" title="Our Work Description goes here!"><img src="img/work/2.jpg" alt="" class="img-responsive"></a>
-                        </div>
-                    </div>
-                    <!--work 1-->
-
-                    <div class="col-md-3 col-sm-4 col-xs-6">
-                        <div class="img-wrapper">
-                            <a href="img/work/3.jpg" title="Our Work Description goes here!"><img src="img/work/3.jpg" alt="" class="img-responsive"></a>
-                        </div>
-                    </div>
-                    <!--work 1-->
-
-                    <div class="col-md-3 col-sm-4 col-xs-6">
-                        <div class="img-wrapper">
-                            <a href="img/work/4.jpg" title="Our Work Description goes here!"><img src="img/work/4.jpg" alt="" class="img-responsive"></a>
-                        </div>
-                    </div>
-                    <!--work 1-->
-
-                    <div class="col-md-3 col-sm-4 col-xs-6">
-                        <div class="img-wrapper">
-                            <a href="img/work/5.jpg" title="Our Work Description goes here!"><img src="img/work/5.jpg" alt="" class="img-responsive"></a>
-                        </div>
-                    </div>
-                    <!--work 1-->
-
-                    <div class="col-md-3 col-sm-4 col-xs-6">
-                        <div class="img-wrapper">
-                            <a href="img/work/6.jpg" title="Our Work Description goes here!"><img src="img/work/6.jpg" alt="" class="img-responsive"></a>
-                        </div>
-                    </div>
-                    <!--work 1-->
-
-                    <div class="col-md-3 col-sm-4 col-xs-6 hidden-sm">
-                        <div class="img-wrapper">
-                            <a href="img/work/7.jpg" title="Our Work Description goes here!"><img src="img/work/7.jpg" alt="" class="img-responsive"></a>
-                        </div>
-                    </div>
-                    <!--work 1-->
-
-                    <div class="col-md-3 col-sm-4 col-xs-6 hidden-sm">
-                        <div class="img-wrapper">
-                            <a href="img/work/8.jpg" title="Our Work Description goes here!"><img src="img/work/8.jpg" alt="" class="img-responsive"></a>
-                        </div>
-                    </div>
-                    <!--work 1-->
-                </div>
-                <!--.row-->
-            </div>
-            <!--.container-->
-        </div>
-        <!--.content-box-->
-    </section>
-    <!--END OF WORK SECTION--> --}}
 
     <!--TEAM SECTION-->
     <section id="team">
@@ -427,128 +363,6 @@ Etiam faucibus, urna et laoreet volutpat, lorem ipsum gravida odio, id pretium l
         </div>
     </section>
     <!--END OF TESTIMONIAL  SECTION-->
-
-    {{-- <!--PRICING TABLE SECTION-->
-    <section id="pricing">
-        <div class="content-box">
-            <div class="content-title wow animated fadeInDown" data-wow-duration="1s" data-wow-delay=".3s">
-                <h3 class="text-heading">Our Pricing</h3>
-                <div class="content-title-underline"></div>
-            </div>
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-md-4 animated wow zoomIn" data-wow-duration="1s" data-wow-delay=".3s">
-                        <div class="pricing-box">
-                            <h4 class="pricing-title">Basic</h4>
-                            <h3 class="pricing-value">49<sup>$</sup></h3>
-                            <ul class="pricing-spec">
-                                <li>
-                                    <p>500 Emails</p>
-                                </li>
-                                <li>
-                                    <p>5GB Disk Space</p>
-                                </li>
-                                <li>
-                                    <p>5GB Bandwidth</p>
-                                </li>
-                                <li>
-                                    <p>Unlimited Domains</p>
-                                </li>
-                            </ul>
-                            <div class="pricing-btn">
-                                <a href="#" role="button" class="btn btn-lg btn-general btn-blue">Purchase</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 wow animated bounceInUp" data-wow-duration="1s" data-wow-delay=".3s">
-                        <div class="pricing-box pricing-box-lg">
-                            <h4 class="pricing-title">Enterprise</h4>
-                            <h3 class="pricing-value">89<sup>$</sup></h3>
-                            <ul class="pricing-spec">
-                                <li>
-                                    <p>2000 Emails</p>
-                                </li>
-                                <li>
-                                    <p>25GB Disk Space</p>
-                                </li>
-                                <li>
-                                    <p>25GB Bandwidth</p>
-                                </li>
-                                <li>
-                                    <p>Unlimited Domains</p>
-                                </li>
-                            </ul>
-                            <div class="pricing-btn">
-                                <a href="#" role="button" class="btn btn-lg btn-general btn-white">Purchase</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 wow animated zoomIn" data-wow-duration="1s" data-wow-delay=".3s">
-                        <div class="pricing-box">
-                            <h4 class="pricing-title">Standard</h4>
-                            <h3 class="pricing-value">69<sup>$</sup></h3>
-                            <ul class="pricing-spec">
-                                <li>
-                                    <p>1500 Emails</p>
-                                </li>
-                                <li>
-                                    <p>15GB Disk Space</p>
-                                </li>
-                                <li>
-                                    <p>15GB Bandwidth</p>
-                                </li>
-                                <li>
-                                    <p>Unlimited Domains</p>
-                                </li>
-                            </ul>
-                            <div class="pricing-btn">
-                                <a href="#" role="button" class="btn btn-lg btn-general btn-blue">Purchase</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--.row-->
-            </div>
-            <!--.container-->
-        </div>
-        <!--.content-box-->
-    </section>
-    <!--END OF PRICING TABLE SECTION--> --}}
-
-
-
-    {{-- <!--CLIENTS SECTION-->
-    <section id="clients">
-        <div class="content-box">
-            <div class="content-title wow animated fadeInDown" data-wow-duration="1s" data-wow-delay=".3s">
-                <h3 class="text-heading">Clients</h3>
-                <div class="content-title-underline"></div>
-            </div>
-            <div class="container">
-                <div class="row wow animated fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
-                    <div class="col-md-12">
-                        <div class="client-list owl-carousel owl-theme">
-                            <div class="client"><img src="img/client/logos/logo-1.jpg" alt="Client Logo" class="img-responsive"></div>
-                            <div class="client"><img src="img/client/logos/logo-2.jpg" alt="Client Logo" class="img-responsive"></div>
-                            <div class="client"><img src="img/client/logos/logo-3.jpg" alt="Client Logo" class="img-responsive"></div>
-                            <div class="client"><img src="img/client/logos/logo-4.jpg" alt="Client Logo" class="img-responsive"></div>
-                            <div class="client"><img src="img/client/logos/logo-5.jpg" alt="Client Logo" class="img-responsive"></div>
-                            <div class="client"><img src="img/client/logos/logo-6.jpg" alt="Client Logo" class="img-responsive"></div>
-                            <div class="client"><img src="img/client/logos/logo-7.jpg" alt="Client Logo" class="img-responsive"></div>
-                            <div class="client"><img src="img/client/logos/logo-8.jpg" alt="Client Logo" class="img-responsive"></div>
-                        </div>
-                    </div>
-                </div>
-                <!--.row-->
-            </div>
-            <!--.container-->
-        </div>
-        <!--.content-box-->
-    </section>
-    <!--END OF CLIENTS SECTION--> --}}
 
     <!--FOOTER SECTION-->
     <footer id="contact">

@@ -23,11 +23,6 @@
                                     <span class="link-collapse">My Profile</span>
                                 </a>
                             </li>
-                            {{-- <li>
-                                <a href="#settings">
-                                    <span class="link-collapse">Settings</span>
-                                </a>
-                            </li> --}}
                         </ul>
                     </div>
                 </div>
